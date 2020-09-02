@@ -1,0 +1,40 @@
+---
+title: Blog 1
+author: Peimin Lin
+date: '2020-08-28'
+slug: blog-1
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-02T19:27:06+10:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tibble)
+library(timevis)
+library(tidyverse)
+library(broom)
+library(palmerpenguins)
+library(MASS) # needed for rlm
+library(coronavirus)
+```
+
+```{r}
+data("coronavirus")
+coronavirus <- as_tibble(coronavirus) 
+Belgium <- coronavirus %>% filter(country =="Belgium")
+
+```
+
+
+
+
