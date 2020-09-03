@@ -17,8 +17,14 @@ image:
 projects: []
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message = FALSE,
+  warning = FALSE, 
+  fig.align = "center", 
+  fig.path = "figures/"
+)
 library(tibble)
 library(timevis)
 library(tidyverse)
@@ -26,111 +32,80 @@ library(broom)
 library(MASS) # needed for rlm
 library(lubridate)
 library(zoo)
+library(coronavirus)
+library(widgetframe)
 ```
 
-```{r}
+```{r read_data}
 case <- read_csv("COVID19BE_CASES_AGESEX.csv")
 mort <- read_csv("COVID19BE_MORT.csv")
+data("coronavirus")
 ```
 
-```{r}
+```{r case_tidy}
 tidy_case <- case %>% mutate(MONTH = month(DATE),
                              YEAR = year(DATE)) %>% 
- count(MONTH,YEAR,SEX, name = "NUMBER")%>%
-  drop_na(SEX, MONTH) 
+ count(MONTH,YEAR, name = "NUMBER")%>%
+  drop_na( MONTH) 
 ```
 
-```{r}
+```{r tibble}
 tibble <- within(tidy_case, Date <- sprintf("%d-%02d", YEAR, MONTH)) %>% mutate(start = Date, end = NA)
 ```
 
-```{r}
+```{r active, fig.cap = "Cases confrimed in Belgium since March 2020"}
 active <- tibble %>%
-  dplyr::select( NUMBER, start, end, SEX) %>% 
-  rename(content = NUMBER,
-         group = SEX) 
- groups <- data.frame(id = c("F","M"), content = c("Female","Male"))  
-  
-timevis(data = active,
-        groups = groups,
-  options = list(editable = TRUE, stack = FALSE))
+  dplyr::select( NUMBER, start, end) %>% 
+  rename(content = NUMBER)
+timevis(active, showZoom = FALSE, height = "150px")
    
 ```
 
+```{r mort}
+tidy_mort <- mort %>% mutate(MONTH = month(DATE)) %>% 
+ count(MONTH,REGION, AGEGROUP,name = "NUMBER") %>%
+  drop_na(AGEGROUP)
+```
 
+```{r facet, fig.height = 8, fig.cap = "Difference age groups of death cases in three reigions" }
+death <- ggplot(tidy_mort,
+       aes(x= MONTH, y = NUMBER, fill = REGION)) +
+  geom_col(position = "dodge") +
+  facet_wrap(REGION~AGEGROUP,nrow = 3)
+death
+```
 
-
-```{r}
-library(timevis)
-
-dataGroups <- data.frame(
-  id = 1:11,
-  content = c(
-    "Open",
-    "Open",
-    "Open",
-    "Open",
-    "Half price entry",
-    "Staff meeting",
-    "Open",
-    "Adults only",
-    "Open",
-    "Hot tub closes",
-    "Siesta"
-  ),
-  start = c(
-    "2016-05-01 07:30:00",
-    "2016-05-01 14:00:00",
-    "2016-05-01 06:00:00",
-    "2016-05-01 14:00:00",
-    "2016-05-01 08:00:00",
-    "2016-05-01 08:00:00",
-    "2016-05-01 08:30:00",
-    "2016-05-01 14:00:00",
-    "2016-05-01 16:00:00",
-    "2016-05-01 19:30:00",
-    "2016-05-01 12:00:00"
-  ),
-  end   = c(
-    "2016-05-01 12:00:00",
-    "2016-05-01 20:00:00",
-    "2016-05-01 12:00:00",
-    "2016-05-01 22:00:00",
-    "2016-05-01 10:00:00",
-    "2016-05-01 08:30:00",
-    "2016-05-01 12:00:00",
-    "2016-05-01 16:00:00",
-    "2016-05-01 20:00:00",
-    NA,
-    "2016-05-01 14:00:00"
-  ),
-  group = c(rep("lib", 2), rep("gym", 3), rep("pool", 5), NA),
-  subgroup = c("A", "A", "B", "C", "C", "D", "D", "E", "E", "E", NA),
-  type = c(rep("range", 9), "point", "background")
-)
-
-groups <- data.frame(id = c("lib", "gym", "pool"),
-                     content = c("Library", "Gym", "Pool"))
-
-timevis(
-  data = dataGroups,
-  groups = groups,
-  options = list(editable = TRUE, stack = FALSE)
-)
-
+```{r second}
+second <- coronavirus %>% 
+  filter(date>= "2020-03-01") %>%
+  dplyr::select(country, type, cases, date) %>%
+  mutate(month = month(date))%>%
+  group_by(country, type, month) %>%
+  summarise(total_cases = sum(cases)) %>%
+  pivot_wider(names_from = type,
+              values_from = total_cases)%>%
+  mutate(death_rate = death/confirmed*100)%>%
+  mutate_if(is.numeric, round, digits = 2) %>%
+  filter(country %in% c("US","China","Belgium"))
 
 ```
 
-
-%>%  
-
-
-  
-g) roups = data.frame(id = 1:2, content = c("F","M")))%>%
-   setGroups(data.frame(id = 1:2, content = c("Female", "Male"))
+```{r dt, fig.cap = "date compared", width="100%",height = "600px" }
+dtable <- DT::datatable(second, options = list(pageLength = 4))
+dtable
+```
 
 
-
-setGroups(data.frame(id = 1:2, content = c("Female", "Male"))
-
-
+```{r format, fig.cap = "the hardest time in Belgium"}
+library(formattable)
+format <- case %>% 
+  mutate(MONTH = month(DATE)) %>%
+ count(MONTH,REGION,PROVINCE, AGEGROUP,name = "NUMBER") %>%
+  drop_na(PROVINCE, REGION,AGEGROUP)%>% 
+  arrange(desc(NUMBER)) %>%
+  head(10) %>%
+as.data.frame() %>%
+rownames_to_column("Variables") %>%
+formattable(list(area(col = 2:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
+format
+```
