@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="data(&quot;coronavirus&quot;)coronavirus &lt;- as_tibble(coronavirus) Belgium &lt;- coronavirus %&gt;% filter(country ==&quot;Belgium&quot;)">
+  <meta name="description" content="case &lt;- read_csv(&quot;COVID19BE_CASES_AGESEX.csv&quot;)## Parsed with column specification:## cols(## DATE = col_date(format = &quot;&quot;),## PROVINCE = col_character(),## REGION = col_character(),## AGEGROUP = col_character(),## SEX = col_character(),## CASES = col_double()## )mort &lt;- read_csv(&quot;COVID19BE_MORT.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/blog-1/">
@@ -271,7 +271,7 @@
   <meta property="og:site_name" content="Blog">
   <meta property="og:url" content="/post/blog-1/">
   <meta property="og:title" content="Blog 1 | Blog">
-  <meta property="og:description" content="data(&quot;coronavirus&quot;)coronavirus &lt;- as_tibble(coronavirus) Belgium &lt;- coronavirus %&gt;% filter(country ==&quot;Belgium&quot;)"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="case &lt;- read_csv(&quot;COVID19BE_CASES_AGESEX.csv&quot;)## Parsed with column specification:## cols(## DATE = col_date(format = &quot;&quot;),## PROVINCE = col_character(),## REGION = col_character(),## AGEGROUP = col_character(),## SEX = col_character(),## CASES = col_double()## )mort &lt;- read_csv(&quot;COVID19BE_MORT."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -321,7 +321,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "\rdata(\u0026quot;coronavirus\u0026quot;)\rcoronavirus \u0026lt;- as_tibble(coronavirus) Belgium \u0026lt;- coronavirus %\u0026gt;% filter(country ==\u0026quot;Belgium\u0026quot;)\r"
+  "description": "case \u0026lt;- read_csv(\u0026quot;COVID19BE_CASES_AGESEX.csv\u0026quot;)\r## Parsed with column specification:\r## cols(\r## DATE = col_date(format = \u0026quot;\u0026quot;),\r## PROVINCE = col_character(),\r## REGION = col_character(),\r## AGEGROUP = col_character(),\r## SEX = col_character(),\r## CASES = col_double()\r## )\rmort \u0026lt;- read_csv(\u0026quot;COVID19BE_MORT."
 }
 </script>
 
@@ -778,9 +778,28 @@
       
 
 
-<pre class="r"><code>data(&quot;coronavirus&quot;)
-coronavirus &lt;- as_tibble(coronavirus) 
-Belgium &lt;- coronavirus %&gt;% filter(country ==&quot;Belgium&quot;)</code></pre>
+<pre class="r"><code>case &lt;- read_csv(&quot;COVID19BE_CASES_AGESEX.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   DATE = col_date(format = &quot;&quot;),
+##   PROVINCE = col_character(),
+##   REGION = col_character(),
+##   AGEGROUP = col_character(),
+##   SEX = col_character(),
+##   CASES = col_double()
+## )</code></pre>
+<pre class="r"><code>mort &lt;- read_csv(&quot;COVID19BE_MORT.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   DATE = col_date(format = &quot;&quot;),
+##   REGION = col_character(),
+##   AGEGROUP = col_character(),
+##   SEX = col_character(),
+##   DEATHS = col_double()
+## )</code></pre>
+<pre class="r"><code>combine &lt;- full_join(case,
+                     mort,
+                     by = c(&quot;DATE&quot;=&quot;DATE&quot;, &quot;REGION&quot;=&quot;REGION&quot;))</code></pre>
 
     </div>
 

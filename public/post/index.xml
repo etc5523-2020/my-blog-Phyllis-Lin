@@ -20,9 +20,28 @@
       <description>
 
 
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(&amp;quot;coronavirus&amp;quot;)
-coronavirus &amp;lt;- as_tibble(coronavirus) 
-Belgium &amp;lt;- coronavirus %&amp;gt;% filter(country ==&amp;quot;Belgium&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;case &amp;lt;- read_csv(&amp;quot;COVID19BE_CASES_AGESEX.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   DATE = col_date(format = &amp;quot;&amp;quot;),
+##   PROVINCE = col_character(),
+##   REGION = col_character(),
+##   AGEGROUP = col_character(),
+##   SEX = col_character(),
+##   CASES = col_double()
+## )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mort &amp;lt;- read_csv(&amp;quot;COVID19BE_MORT.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   DATE = col_date(format = &amp;quot;&amp;quot;),
+##   REGION = col_character(),
+##   AGEGROUP = col_character(),
+##   SEX = col_character(),
+##   DEATHS = col_double()
+## )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;combine &amp;lt;- full_join(case,
+                     mort,
+                     by = c(&amp;quot;DATE&amp;quot;=&amp;quot;DATE&amp;quot;, &amp;quot;REGION&amp;quot;=&amp;quot;REGION&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

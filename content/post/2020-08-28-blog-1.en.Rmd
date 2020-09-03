@@ -23,18 +23,114 @@ library(tibble)
 library(timevis)
 library(tidyverse)
 library(broom)
-library(palmerpenguins)
 library(MASS) # needed for rlm
-library(coronavirus)
+library(lubridate)
+library(zoo)
 ```
 
 ```{r}
-data("coronavirus")
-coronavirus <- as_tibble(coronavirus) 
-Belgium <- coronavirus %>% filter(country =="Belgium")
+case <- read_csv("COVID19BE_CASES_AGESEX.csv")
+mort <- read_csv("COVID19BE_MORT.csv")
+```
+
+```{r}
+tidy_case <- case %>% mutate(MONTH = month(DATE),
+                             YEAR = year(DATE)) %>% 
+ count(MONTH,YEAR,SEX, name = "NUMBER")%>%
+  drop_na(SEX, MONTH) 
+```
+
+```{r}
+tibble <- within(tidy_case, Date <- sprintf("%d-%02d", YEAR, MONTH)) %>% mutate(start = Date, end = NA)
+```
+
+```{r}
+active <- tibble %>%
+  dplyr::select( NUMBER, start, end, SEX) %>% 
+  rename(content = NUMBER,
+         group = SEX) 
+ groups <- data.frame(id = c("F","M"), content = c("Female","Male"))  
+  
+timevis(data = active,
+        groups = groups,
+  options = list(editable = TRUE, stack = FALSE))
+   
+```
+
+
+
+
+```{r}
+library(timevis)
+
+dataGroups <- data.frame(
+  id = 1:11,
+  content = c(
+    "Open",
+    "Open",
+    "Open",
+    "Open",
+    "Half price entry",
+    "Staff meeting",
+    "Open",
+    "Adults only",
+    "Open",
+    "Hot tub closes",
+    "Siesta"
+  ),
+  start = c(
+    "2016-05-01 07:30:00",
+    "2016-05-01 14:00:00",
+    "2016-05-01 06:00:00",
+    "2016-05-01 14:00:00",
+    "2016-05-01 08:00:00",
+    "2016-05-01 08:00:00",
+    "2016-05-01 08:30:00",
+    "2016-05-01 14:00:00",
+    "2016-05-01 16:00:00",
+    "2016-05-01 19:30:00",
+    "2016-05-01 12:00:00"
+  ),
+  end   = c(
+    "2016-05-01 12:00:00",
+    "2016-05-01 20:00:00",
+    "2016-05-01 12:00:00",
+    "2016-05-01 22:00:00",
+    "2016-05-01 10:00:00",
+    "2016-05-01 08:30:00",
+    "2016-05-01 12:00:00",
+    "2016-05-01 16:00:00",
+    "2016-05-01 20:00:00",
+    NA,
+    "2016-05-01 14:00:00"
+  ),
+  group = c(rep("lib", 2), rep("gym", 3), rep("pool", 5), NA),
+  subgroup = c("A", "A", "B", "C", "C", "D", "D", "E", "E", "E", NA),
+  type = c(rep("range", 9), "point", "background")
+)
+
+groups <- data.frame(id = c("lib", "gym", "pool"),
+                     content = c("Library", "Gym", "Pool"))
+
+timevis(
+  data = dataGroups,
+  groups = groups,
+  options = list(editable = TRUE, stack = FALSE)
+)
+
 
 ```
 
 
+%>%  
+
+
+  
+g) roups = data.frame(id = 1:2, content = c("F","M")))%>%
+   setGroups(data.frame(id = 1:2, content = c("Female", "Male"))
+
+
+
+setGroups(data.frame(id = 1:2, content = c("Female", "Male"))
 
 

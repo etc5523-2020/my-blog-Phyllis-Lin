@@ -19,6 +19,25 @@ projects: []
 
 
 
-<pre class="r"><code>data(&quot;coronavirus&quot;)
-coronavirus &lt;- as_tibble(coronavirus) 
-Belgium &lt;- coronavirus %&gt;% filter(country ==&quot;Belgium&quot;)</code></pre>
+<pre class="r"><code>case &lt;- read_csv(&quot;COVID19BE_CASES_AGESEX.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   DATE = col_date(format = &quot;&quot;),
+##   PROVINCE = col_character(),
+##   REGION = col_character(),
+##   AGEGROUP = col_character(),
+##   SEX = col_character(),
+##   CASES = col_double()
+## )</code></pre>
+<pre class="r"><code>mort &lt;- read_csv(&quot;COVID19BE_MORT.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   DATE = col_date(format = &quot;&quot;),
+##   REGION = col_character(),
+##   AGEGROUP = col_character(),
+##   SEX = col_character(),
+##   DEATHS = col_double()
+## )</code></pre>
+<pre class="r"><code>combine &lt;- full_join(case,
+                     mort,
+                     by = c(&quot;DATE&quot;=&quot;DATE&quot;, &quot;REGION&quot;=&quot;REGION&quot;))</code></pre>
