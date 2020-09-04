@@ -48,9 +48,6 @@ The blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to
 
 You can visualise the number of COVID-19 cased confirmed in Belgium from March to August 2020 in Figure \@ref(fig:active). It shows that April was the most seriousness month that have the largest infected population. Since then, people started pay attention and took anti-epidemic action and the confirmed cases got a good result. However, there are still have high number of confirmed cases. 
 
-For further research, it found that the elder got higher infected rate, Figure \@ref(fig:compare) listed confirmed cases in difference provinces and regions and difference age group. It shows that the largest number were from 80-89 age group in every region in April. 
-
-
 ```{r case_tidy}
 tidy_case <- case %>% mutate(MONTH = month(DATE),
                              YEAR = year(DATE)) %>% 
@@ -70,18 +67,28 @@ timevis(active, showZoom = FALSE, height = "150px")
    
 ```
 
-```{r compare, fig.cap="the hardest time in Belgium"}
+For further research, it found that the elder got higher infected rate, Figure \@ref(fig:compare) listed confirmed cases in difference provinces and regions and difference age group. It shows that the largest number were from 80-89 age group in every region in April. 
+
+
+```{r format}
 format <- case %>% 
   mutate(MONTH = month(DATE)) %>%
  count(MONTH,REGION,PROVINCE, AGEGROUP,name = "NUMBER") %>%
   drop_na(PROVINCE, REGION,AGEGROUP)%>% 
   arrange(desc(NUMBER)) %>%
-  head(10) %>%
-as.data.frame() %>%
-rownames_to_column("Variables") %>%
-formattable(list(area(col = 2:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
-format
+  head(10)
 ```
+
+```{r compare, fig.cap="the hardest time in Belgium", fig.path = "figures/"}
+compare <- format %>% 
+  as.data.frame() %>%
+rownames_to_column("Variables") %>%
+formattable(list(area(col = 5:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
+compare
+```
+
+We found that not only did the elder would easier infected, but also got a higher death rate. In Figure \@ref(fig:facet-1), it shows that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set. 
+
 
 ```{r mort}
 tidy_mort <- mort %>% mutate(MONTH = month(DATE)) %>% 
@@ -89,7 +96,7 @@ tidy_mort <- mort %>% mutate(MONTH = month(DATE)) %>%
   drop_na(AGEGROUP)
 ```
 
-```{r facet, fig.height = 8, fig.cap = "Difference age groups of death cases in three reigions" }
+```{r facet-1, out.height = "80%", fig.cap = "Difference age groups of death cases in three reigions" }
 death <- ggplot(tidy_mort,
        aes(x= MONTH, y = NUMBER, fill = REGION)) +
   geom_col(position = "dodge") +
@@ -106,14 +113,16 @@ second <- coronavirus %>%
   summarise(total_cases = sum(cases)) %>%
   pivot_wider(names_from = type,
               values_from = total_cases)%>%
-  mutate(death_rate = death/confirmed*100)%>%
+  mutate(death_rate = death/confirmed*100,
+         recovered_rate = recovered/confirmed*100)%>%
   mutate_if(is.numeric, round, digits = 2) %>%
   filter(country %in% c("US","China","Belgium"))
-
 ```
 
-```{r dt, fig.cap = "date compared", width="100%",height = "600px" }
-dtable <- DT::datatable(second, options = list(pageLength = 4))
+Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. Figure \@ref(fig:dt) shows that Belgium got the second highest death rate in April.
+
+```{r dt, fig.cap = "date compared"}
+dtable <- DT::datatable(second, options = list(pageLength = 5))
 dtable
 ```
 
