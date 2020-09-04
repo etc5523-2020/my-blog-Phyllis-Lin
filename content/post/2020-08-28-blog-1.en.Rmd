@@ -49,7 +49,7 @@ You can visualise the number of COVID-19 cased confirmed in Belgium from March t
 tidy_case <- case %>% mutate(MONTH = month(DATE),
                              YEAR = year(DATE)) %>% 
  count(MONTH,YEAR, name = "NUMBER")%>%
-  drop_na( MONTH) 
+  drop_na(MONTH) 
 ```
 
 ```{r tibble}
@@ -64,7 +64,7 @@ timevis(active, showZoom = FALSE, height = "150px")
    
 ```
 
-For further research, it found that the elder got higher infected rate, Figure \@ref(fig:compare) listed confirmed cases in difference provinces and regions and difference age group. It shows that the largest number were from 80-89 age group in every region in April. 
+For further research, it found that the elder got higher infected rate, the table show below listed confirmed cases in difference provinces and regions and difference age group. It shows that the largest number were from 80-89 age group in every region in April. 
 
 
 ```{r format}
@@ -76,7 +76,7 @@ format <- case %>%
   head(10)
 ```
 
-```{r compare, fig.cap="the hardest time in Belgium"}
+```{r compare}
 compare <- format %>% 
   as.data.frame() %>%
 rownames_to_column("Variables") %>%
@@ -84,7 +84,7 @@ formattable(list(area(col = 5:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
 compare
 ```
 
-We found that not only did the elder would easier infected, but also got a higher death rate. In Figure \@ref(fig:facet-1), it shows that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set. 
+We found that not only did the elder would easier infected, but also got a higher death rate. Figure \@ref(fig:facet) shown below that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set. 
 
 
 ```{r mort}
@@ -93,7 +93,7 @@ tidy_mort <- mort %>% mutate(MONTH = month(DATE)) %>%
   drop_na(AGEGROUP)
 ```
 
-```{r facet, out.height = "80%"}
+```{r facet, out.width = "100%", fig.cap="Mortaity numbers from March to August in three reigions" }
 death <- ggplot(tidy_mort,
        aes(x= MONTH, y = NUMBER, fill = REGION)) +
   geom_col(position = "dodge") +
@@ -113,13 +113,41 @@ second <- coronavirus %>%
   mutate(death_rate = death/confirmed*100,
          recovered_rate = recovered/confirmed*100)%>%
   mutate_if(is.numeric, round, digits = 2) %>%
+  dplyr::select(country, month,death_rate, recovered_rate) %>%
   filter(country %in% c("US","China","Belgium"))
 ```
 
 Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. The interactive table shows below that Belgium got the second highest death rate in April.
 
 ```{r dt}
-frameWidget(DT::datatable(second, options = list(pageLength = 5)))
+dtable <- DT::datatable(second, options = list(pageLength = 5), width = "500px")
+frameWidget(dtable)
 ```
 
+# Reference
 
+Allaire, J, Y Xie, J McPherson, J Luraschi, K Ushey, A Atkins, H Wickham, J Cheng, W Chang, and R Iannone (2020). **rmarkdown: Dynamic Documents for R.** R package version 2.1. https://rmarkdown.rstudio.com.
+
+Grolemund, G and H Wickham (2011). Dates and Times Made Easy with lubridate. **Journal of Statistical Software 40(3), 1–25.**
+
+Wickham, H, M Averick, J Bryan, W Chang, LD McGowan, R François, G Grolemund, A Hayes, L Henry, J Hester, M Kuhn, TL Pedersen, E Miller, SM Bache, K Müller, J Ooms, D Robinson, DP Seidel, V Spinu, K Takahashi, D Vaughan, C Wilke, K Woo, and H Yutani (2019). Welcome to the tidyverse. **Journal of Open Source Software 4(43), 1686.**
+
+Xie, Y (2020a). **bookdown**: Authoring Books and Technical Documents with R Markdown. R package version 0.18. https://github.com/rstudio/bookdown
+
+Kirill Müller and Hadley Wickham (2020). **tibble**: Simple Data Frames. R package version 3.0.3. https://CRAN.R-project.org/package=tibble
+
+Dean Attali and Almende B.V. (2019). **timevis**:Create Interactive Timeline Visualizations in R.  R package version 0.5. https://CRAN.R-project.org/package=timevis
+
+ David Robinson, Alex Hayes and Simon Couch(2020). **broom**: Convert Statistical Objects into Tidy Tibbles. R package version 0.7.0. https://CRAN.R-project.org/package=broom
+ 
+Achim Zeileis and Gabor Grothendieck (2005). **zoo**: S3 Infrastructure for Regular and Irregular Time Series. **Journal of Statistical Software**, 14(6), 1-27. doi:10.18637/jss.v014.i06
+
+Rami Krispin and Jarrett Byrnes (2020). **coronavirus**: The 2019 Novel Coronavirus COVID-19 (2019-nCoV) Dataset. R package version 0.3.0. https://CRAN.R-project.org/package=coronavirus
+
+Bhaskar Karambelkar (2017). **widgetframe**: 'Htmlwidgets' in Responsive 'iframes'. R package version 0.3.1. https://CRAN.R-project.org/package=widgetframe
+
+Kun Ren and Kenton Russell (2019). **formattable**: Create 'Formattable' Data Structures.https://renkun.me/formattable,
+
+Evgeniya K (2020). **COVID-19 in Belgium.** https://www.kaggle.com/evgeniako/covid19-in-belgium
+
+Yihui Xie, Joe Cheng and Xianying Tan (2020). **DT**: A Wrapper of the JavaScript Library 'DataTables'. R package version 0.15. https://CRAN.R-project.org/package=DT
