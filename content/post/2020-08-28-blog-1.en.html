@@ -28,13 +28,8 @@ projects: []
 <script src="/rmarkdown-libs/bootstrap/js/bootstrap.min.js"></script>
 <script src="/rmarkdown-libs/bootstrap/shim/html5shiv.min.js"></script>
 <script src="/rmarkdown-libs/bootstrap/shim/respond.min.js"></script>
-<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
-<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
-<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
 
 
 <p>The blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to August 2020 and used the data source from <a href="https://www.kaggle.com/evgeniako/covid19-in-belgium">Kaggle</a> and used the dataset from package <em>coronavirus</em>.</p>
@@ -278,18 +273,8 @@ Antwerpen
 </tr>
 </tbody>
 </table>
-<p>We found that not only did the elder would easier infected, but also got a higher death rate. In Figure <a href="#fig:facet-1">2</a>, it shows that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set.</p>
-<div class="figure" style="text-align: center"><span id="fig:facet-1"></span>
-<img src="figures/facet-1-1.png" alt="Difference age groups of death cases in three reigions" width="672" height="80%" />
-<p class="caption">
-Figure 2: Difference age groups of death cases in three reigions
-</p>
-</div>
-<p>Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. Figure <a href="#fig:dt">3</a> shows that Belgium got the second highest death rate in April.</p>
-<div class="figure" style="text-align: center"><span id="fig:dt"></span>
-<div id="htmlwidget-2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["Belgium","Belgium","Belgium","Belgium","Belgium","China","China","China","China","China","US","US","US","US","US"],[3,4,5,6,7,3,4,5,6,7,3,4,5,6,7],[12774,35744,9862,3046,7324,2923,1677,190,639,2870,188700,883943,726457,837290,1925624],[705,6889,1873,280,94,472,1328,1,3,20,5604,58651,41108,22068,25882],[1695,9880,4311,1097,562,36886,2317,866,243,1155,7017,146923,290811,275873,717529],[5.52,19.27,18.99,9.19,1.28,16.15,79.19,0.53,0.47,0.7,2.97,6.64,5.66,2.64,1.34],[13.27,27.64,43.71,36.01,7.67,1261.92,138.16,455.79,38.03,40.24,3.72,16.62,40.03,32.95,37.26]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>country<\/th>\n      <th>month<\/th>\n      <th>confirmed<\/th>\n      <th>death<\/th>\n      <th>recovered<\/th>\n      <th>death_rate<\/th>\n      <th>recovered_rate<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-<p class="caption">
-Figure 3: date compared
-</p>
-</div>
+<p>We found that not only did the elder would easier infected, but also got a higher death rate. In Figure <a href="#fig:facet-1"><strong>??</strong></a>, it shows that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set.</p>
+<p><img src="/post/2020-08-28-blog-1.en_files/figure-html/facet-1.png" width="672" height="80%" style="display: block; margin: auto;" /></p>
+<p>Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. The interactive table shows below that Belgium got the second highest death rate in April.</p>
+<div id="htmlwidget-2" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"url":"/post/2020-08-28-blog-1.en_files/figure-html//widgets/widget_dt.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>

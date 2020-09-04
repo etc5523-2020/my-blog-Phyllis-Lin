@@ -93,13 +93,8 @@
 &lt;script src=&#34;/rmarkdown-libs/bootstrap/js/bootstrap.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/bootstrap/shim/html5shiv.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/bootstrap/shim/respond.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/datatables-css/datatables-crosstalk.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/datatables-binding/datatables.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;link href=&#34;/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/crosstalk/css/crosstalk.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/crosstalk/js/crosstalk.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/pymjs/pym.v1.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/widgetframe-binding/widgetframe.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;The blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to August 2020 and used the data source from &lt;a href=&#34;https://www.kaggle.com/evgeniako/covid19-in-belgium&#34;&gt;Kaggle&lt;/a&gt; and used the dataset from package &lt;em&gt;coronavirus&lt;/em&gt;.&lt;/p&gt;
@@ -343,21 +338,11 @@ Antwerpen
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;We found that not only did the elder would easier infected, but also got a higher death rate. In Figure &lt;a href=&#34;#fig:facet-1&#34;&gt;2&lt;/a&gt;, it shows that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:facet-1&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;figures/facet-1-1.png&#34; alt=&#34;Difference age groups of death cases in three reigions&#34; width=&#34;672&#34; height=&#34;80%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Difference age groups of death cases in three reigions
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. Figure &lt;a href=&#34;#fig:dt&#34;&gt;3&lt;/a&gt; shows that Belgium got the second highest death rate in April.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:dt&#34;&gt;&lt;/span&gt;
-&lt;div id=&#34;htmlwidget-2&#34; style=&#34;width:100%;height:auto;&#34; class=&#34;datatables html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;filter&#34;:&#34;none&#34;,&#34;data&#34;:[[&#34;1&#34;,&#34;2&#34;,&#34;3&#34;,&#34;4&#34;,&#34;5&#34;,&#34;6&#34;,&#34;7&#34;,&#34;8&#34;,&#34;9&#34;,&#34;10&#34;,&#34;11&#34;,&#34;12&#34;,&#34;13&#34;,&#34;14&#34;,&#34;15&#34;],[&#34;Belgium&#34;,&#34;Belgium&#34;,&#34;Belgium&#34;,&#34;Belgium&#34;,&#34;Belgium&#34;,&#34;China&#34;,&#34;China&#34;,&#34;China&#34;,&#34;China&#34;,&#34;China&#34;,&#34;US&#34;,&#34;US&#34;,&#34;US&#34;,&#34;US&#34;,&#34;US&#34;],[3,4,5,6,7,3,4,5,6,7,3,4,5,6,7],[12774,35744,9862,3046,7324,2923,1677,190,639,2870,188700,883943,726457,837290,1925624],[705,6889,1873,280,94,472,1328,1,3,20,5604,58651,41108,22068,25882],[1695,9880,4311,1097,562,36886,2317,866,243,1155,7017,146923,290811,275873,717529],[5.52,19.27,18.99,9.19,1.28,16.15,79.19,0.53,0.47,0.7,2.97,6.64,5.66,2.64,1.34],[13.27,27.64,43.71,36.01,7.67,1261.92,138.16,455.79,38.03,40.24,3.72,16.62,40.03,32.95,37.26]],&#34;container&#34;:&#34;&lt;table class=\&#34;display\&#34;&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt; &lt;\/th&gt;\n      &lt;th&gt;country&lt;\/th&gt;\n      &lt;th&gt;month&lt;\/th&gt;\n      &lt;th&gt;confirmed&lt;\/th&gt;\n      &lt;th&gt;death&lt;\/th&gt;\n      &lt;th&gt;recovered&lt;\/th&gt;\n      &lt;th&gt;death_rate&lt;\/th&gt;\n      &lt;th&gt;recovered_rate&lt;\/th&gt;\n    &lt;\/tr&gt;\n  &lt;\/thead&gt;\n&lt;\/table&gt;&#34;,&#34;options&#34;:{&#34;pageLength&#34;:5,&#34;columnDefs&#34;:[{&#34;className&#34;:&#34;dt-right&#34;,&#34;targets&#34;:[2,3,4,5,6,7]},{&#34;orderable&#34;:false,&#34;targets&#34;:0}],&#34;order&#34;:[],&#34;autoWidth&#34;:false,&#34;orderClasses&#34;:false,&#34;lengthMenu&#34;:[5,10,25,50,100]}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 3: date compared
-&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;We found that not only did the elder would easier infected, but also got a higher death rate. In Figure &lt;a href=&#34;#fig:facet-1&#34;&gt;&lt;strong&gt;??&lt;/strong&gt;&lt;/a&gt;, it shows that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-28-blog-1.en_files/figure-html/facet-1.png&#34; width=&#34;672&#34; height=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. The interactive table shows below that Belgium got the second highest death rate in April.&lt;/p&gt;
+&lt;div id=&#34;htmlwidget-2&#34; style=&#34;width:100%;height:480px;&#34; class=&#34;widgetframe html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;url&#34;:&#34;/post/2020-08-28-blog-1.en_files/figure-html//widgets/widget_dt.html&#34;,&#34;options&#34;:{&#34;xdomain&#34;:&#34;*&#34;,&#34;allowfullscreen&#34;:false,&#34;lazyload&#34;:false}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
 </description>
     </item>
     
