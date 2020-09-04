@@ -5,30 +5,17 @@ education:
   - course: Master of Business Anlytics
     institution: Monash University
     year: 2021
-email: ""
-interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+email: "plin0018@student.monash.edu"
 organizations:
 - name: Moansh University
 role: Master of Business Analytics
 social:
-- icon: envelope
-  icon_pack: fas
-  link: /#contact
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/Phyllis-Lin
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/phyllis-lin-b7a0a7179
 superuser: true
 title: Peimin Lin
 user_groups:

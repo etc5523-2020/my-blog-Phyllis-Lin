@@ -34,6 +34,8 @@ library(lubridate)
 library(zoo)
 library(coronavirus)
 library(widgetframe)
+library(formattable)
+library(bookdown)
 ```
 
 ```{r read_data}
@@ -41,6 +43,13 @@ case <- read_csv("COVID19BE_CASES_AGESEX.csv")
 mort <- read_csv("COVID19BE_MORT.csv")
 data("coronavirus")
 ```
+
+The blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to August 2020 and used the data source from [Kaggle]( https://www.kaggle.com/evgeniako/covid19-in-belgium) and used  the dataset from package *coronavirus*. 
+
+You can visualise the number of COVID-19 cased confirmed in Belgium from March to August 2020 in Figure \@ref(fig:active). It shows that April was the most seriousness month that have the largest infected population. Since then, people started pay attention and took anti-epidemic action and the confirmed cases got a good result. However, there are still have high number of confirmed cases. 
+
+For further research, it found that the elder got higher infected rate, Figure \@ref(fig:compare) listed confirmed cases in difference provinces and regions and difference age group. It shows that the largest number were from 80-89 age group in every region in April. 
+
 
 ```{r case_tidy}
 tidy_case <- case %>% mutate(MONTH = month(DATE),
@@ -59,6 +68,19 @@ active <- tibble %>%
   rename(content = NUMBER)
 timevis(active, showZoom = FALSE, height = "150px")
    
+```
+
+```{r compare, fig.cap="the hardest time in Belgium"}
+format <- case %>% 
+  mutate(MONTH = month(DATE)) %>%
+ count(MONTH,REGION,PROVINCE, AGEGROUP,name = "NUMBER") %>%
+  drop_na(PROVINCE, REGION,AGEGROUP)%>% 
+  arrange(desc(NUMBER)) %>%
+  head(10) %>%
+as.data.frame() %>%
+rownames_to_column("Variables") %>%
+formattable(list(area(col = 2:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
+format
 ```
 
 ```{r mort}
@@ -96,16 +118,3 @@ dtable
 ```
 
 
-```{r format, fig.cap = "the hardest time in Belgium"}
-library(formattable)
-format <- case %>% 
-  mutate(MONTH = month(DATE)) %>%
- count(MONTH,REGION,PROVINCE, AGEGROUP,name = "NUMBER") %>%
-  drop_na(PROVINCE, REGION,AGEGROUP)%>% 
-  arrange(desc(NUMBER)) %>%
-  head(10) %>%
-as.data.frame() %>%
-rownames_to_column("Variables") %>%
-formattable(list(area(col = 2:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
-format
-```
