@@ -80,7 +80,8 @@ format <- case %>%
 compare <- format %>% 
   as.data.frame() %>%
 rownames_to_column("Variables") %>%
-formattable(list(area(col = 5:6) ~ color_tile("#F5B7B1", "#7DCEA0")))
+formattable(align = "r",
+            list(area(col = 6) ~ color_tile("#7DCEA0","#FA614B66")))
 compare
 ```
 
@@ -117,12 +118,16 @@ second <- coronavirus %>%
   filter(country %in% c("US","China","Belgium"))
 ```
 
-Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. The interactive table shows below that Belgium got the second highest death rate in April.
+Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. The interactive table shows below that Belgium got the second highest death rate in April. During this research, I found an article online said that Belgium got the highest death rate around the world. What made Belgium rank the first place? If you interested about it, you can spend few minutes to have a look [Is Belgium the world's deadliest COVID-19 country or just the most honest?](https://www.smh.com.au/world/europe/is-belgium-the-world-s-deadliest-covid-19-country-or-just-the-most-honest-20200522-p54voq.html) 
+
+Belgium is a beautiful country, it is famous for its chocolate and it has plenty of historical treasures. Hope the epidemic will end soon and I will have the opportunity to travel.
+
 
 ```{r dt}
-dtable <- DT::datatable(second, options = list(pageLength = 5), width = "500px")
+dtable <- DT::datatable(second, options = list(pageLength = 5), width = "500px", caption = "Comparison betwee US and China from March to July")
 frameWidget(dtable)
 ```
+
 
 # Reference
 
