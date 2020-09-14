@@ -1,0 +1,18 @@
+---
+title: Blog 2
+author: Peimin Lin
+date: '2020-09-12'
+slug: blog-2
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-14T16:06:03+10:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
