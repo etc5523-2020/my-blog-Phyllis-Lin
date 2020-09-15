@@ -16,3 +16,58 @@ image:
   preview_only: no
 projects: []
 ---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message = FALSE,
+  warning = FALSE, 
+  fig.align = "center")
+library(tidyverse)
+library(tidycovid19)
+library(bookdown)
+library(alfred)
+library(lubridate)
+library(stevemisc)
+```
+
+```{r}
+merged <- download_merged_data(cached = TRUE, silent = TRUE)
+plot_covid19_spread(
+  merged, highlight = c("ITA", "BEL","ESP", "GBR", "FRA", "DEU","RUS","SWE"),
+  intervention = "lockdown"
+)
+```
+
+```{r}
+map_covid19(merged, type = "deaths", region = "Europe")
+```
+```{r}
+fred2020Q1vin <- as_tibble(get_alfred_series("CLVMNACSCAB1GQBE",
+                                        observation_start = as.Date("2005-01-01") ))
+```
+
+```{r}
+tidy <- fred2020Q1vin%>%
+  group_by(realtime_period) %>%
+  summarise(number = mean(CLVMNACSCAB1GQBE))
+```
+
+```{r}
+fred2020Q1vin %>%
+  ggplot(.,aes(date,CLVMNACSCAB1GQBE)) +
+  theme_steve_web() + post_bg() +
+  scale_x_date(date_breaks = "1 years",
+               date_labels = "%Y",
+               limits = as.Date(c('2005-01-01','2020-04-01')))+
+  geom_rect(data=filter(recessions,year(peak)>2004), inherit.aes=F, 
+            aes(xmin=peak, xmax=trough, ymin=-Inf, ymax=+Inf), fill='darkgray', alpha=0.8)+
+     geom_line() +
+    geom_ribbon(aes(ymin=-Inf, ymax=CLVMNACSCAB1GQBE),
+              alpha=0.3, fill="#619CFF")+
+labs(title = "GDP From January 1, 2010 to April 1, 2020",
+       subtitle = "GDP in Belgium rapidly fell to same level of 2019 which went through an economic crisis..",
+       x = "", y = "RGDP in Millions of Chained 2010 Euros",
+       caption = "Data: .") + geom_hline(yintercept=87500, linetype="dashed", color = "red") 
+```
+
