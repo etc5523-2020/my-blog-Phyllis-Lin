@@ -77,6 +77,20 @@
     </item>
     
     <item>
+      <title>Blog 2</title>
+      <link>/post/blog-2/</link>
+      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/blog-2/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Blog 1</title>
       <link>/post/blog-1/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
