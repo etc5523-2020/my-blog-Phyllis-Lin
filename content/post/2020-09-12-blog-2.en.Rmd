@@ -29,9 +29,11 @@ library(bookdown)
 library(alfred)
 library(lubridate)
 library(stevemisc)
+case <- read_csv("COVID19BE_CASES_AGESEX.csv")
+
 ```
 
-```{r}
+```{r merged,fig.cap = "The First 180 Days:Reported deaths."}
 merged <- download_merged_data(cached = TRUE, silent = TRUE)
 plot_covid19_spread(
   merged, highlight = c("ITA", "BEL","ESP", "GBR", "FRA", "DEU","RUS","SWE"),
@@ -39,24 +41,20 @@ plot_covid19_spread(
 )
 ```
 
-```{r}
+```{r map,fig.cap = "Covid19:Reported deaths(new cases per day)"}
 map_covid19(merged, type = "deaths", region = "Europe")
 ```
-```{r}
+
+```{r fred}
 fred2020Q1vin <- as_tibble(get_alfred_series("CLVMNACSCAB1GQBE",
-                                        observation_start = as.Date("2005-01-01") ))
+                                        observation_start = as.Date("2005-01-01"),realtime_start = "2020-08-11" ))
 ```
 
-```{r}
-tidy <- fred2020Q1vin%>%
-  group_by(realtime_period) %>%
-  summarise(number = mean(CLVMNACSCAB1GQBE))
-```
-
-```{r}
+```{r graph, fig.cap = "Real GDP from Jan 1 "}
 fred2020Q1vin %>%
   ggplot(.,aes(date,CLVMNACSCAB1GQBE)) +
-  theme_steve_web() + post_bg() +
+  theme_steve_web() +
+  post_bg() +
   scale_x_date(date_breaks = "1 years",
                date_labels = "%Y",
                limits = as.Date(c('2005-01-01','2020-04-01')))+
@@ -66,8 +64,29 @@ fred2020Q1vin %>%
     geom_ribbon(aes(ymin=-Inf, ymax=CLVMNACSCAB1GQBE),
               alpha=0.3, fill="#619CFF")+
 labs(title = "GDP From January 1, 2010 to April 1, 2020",
-       subtitle = "GDP in Belgium rapidly fell to same level of 2019 which went through an economic crisis..",
-       x = "", y = "RGDP in Millions of Chained 2010 Euros",
-       caption = "Data: .") + geom_hline(yintercept=87500, linetype="dashed", color = "red") 
+       subtitle = "GDP in Belgium rapidly fell to same level of 2019 which went through an economic crisis.",
+       x = "Year", y = "RGDP in Millions of Chained 2010 Euros",
+       caption = "Data: source from Eurostat") + geom_hline(yintercept=87500, linetype="dashed", color = "red") 
+```
+
+```{r}
+fredun <- as_tibble(get_alfred_series("LMUNRRTTBEQ156S",
+                                        observation_start = as.Date("2015-01-01"), realtime_start = "2020-08-11" ))
+```
+
+```{r}
+fredun %>%
+  ggplot(.,aes(date,LMUNRRTTBEQ156S)) +
+  theme_steve_web() +
+  post_bg() +
+  scale_x_date(date_breaks = "1 years",
+               date_labels = "%Y",
+               limits = as.Date(c('2015-01-01','2020-04-01')))+
+  geom_line() +
+  geom_point(size=3, shape=22, color="darkred", fill="pink")+
+labs(title = "Unemployment Rate From Jan 1 2015 to Apr 1 2020",
+       subtitle = "Unemployment rate in Belgium increase significantly since epidemics.",
+       x = "Year", y = "Unemployment Rate",
+       caption = "Data: source from Eurostat.") 
 ```
 
