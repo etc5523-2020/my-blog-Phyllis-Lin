@@ -130,7 +130,6 @@ frameWidget(dtable)
 
 
 # Reference
-
 Allaire, J, Y Xie, J McPherson, J Luraschi, K Ushey, A Atkins, H Wickham, J Cheng, W Chang, and R Iannone (2020). **rmarkdown: Dynamic Documents for R.** R package version 2.1. https://rmarkdown.rstudio.com.
 
 Grolemund, G and H Wickham (2011). Dates and Times Made Easy with lubridate. **Journal of Statistical Software 40(3), 1–25.**
@@ -156,3 +155,4 @@ Kun Ren and Kenton Russell (2019). **formattable**: Create 'Formattable' Data St
 Evgeniya K (2020). **COVID-19 in Belgium.** https://www.kaggle.com/evgeniako/covid19-in-belgium
 
 Yihui Xie, Joe Cheng and Xianying Tan (2020). **DT**: A Wrapper of the JavaScript Library 'DataTables'. R package version 0.15. https://CRAN.R-project.org/package=DT
+

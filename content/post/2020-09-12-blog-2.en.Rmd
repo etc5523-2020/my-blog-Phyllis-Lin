@@ -1,5 +1,5 @@
 ---
-title: Blog 2
+title: The impact of Covid-19 on Belgium
 author: Peimin Lin
 date: '2020-09-12'
 slug: blog-2
@@ -29,9 +29,9 @@ library(bookdown)
 library(alfred)
 library(lubridate)
 library(stevemisc)
-case <- read_csv("COVID19BE_CASES_AGESEX.csv")
-
 ```
+
+
 
 ```{r merged,fig.cap = "The First 180 Days:Reported deaths."}
 merged <- download_merged_data(cached = TRUE, silent = TRUE)
@@ -89,4 +89,3 @@ labs(title = "Unemployment Rate From Jan 1 2015 to Apr 1 2020",
        x = "Year", y = "Unemployment Rate",
        caption = "Data: source from Eurostat.") 
 ```
-
