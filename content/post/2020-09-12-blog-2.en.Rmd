@@ -89,7 +89,7 @@ fredeuro <- as_tibble(get_alfred_series("CLVMEURNSAB1GQEA19",
 ```
 
 ```{r gdpjoin}
-join <- left_join(fred2020, fredeuro, by=c("date"="date")) %>%
+joingdp <- left_join(fred2020, fredeuro, by=c("date"="date")) %>%
   dplyr::select(date, BelRate_percent, ERate_percent ) %>%
   rename("Belgium"="BelRate_percent", "Euro"="ERate_percent")
 ```
@@ -97,7 +97,11 @@ join <- left_join(fred2020, fredeuro, by=c("date"="date")) %>%
 ```{r gcompare,fig.cap = "GDP comparison between Belgium and European Union(19 countries)"}
 gdpcom <- ggplot(join, aes(x=date)) +
   geom_line(aes(y = Belgium, colour = "Belgium")) + 
-  geom_line(aes(y = Euro, colour = "Euro"))
+  geom_line(aes(y = Euro, colour = "Euro"))+
+  labs(title = "GDP comparison between Belgium and European Union(19 countries)",
+       subtitle = "GDP in Belgium flation rate was more than European Union since outbreak.",
+       x = "Year", y = "Gradient") 
+  
 gdpcom 
 ```
 
@@ -123,12 +127,29 @@ labs(title = "Unemployment Rate From Jan 1 2015 to Apr 1 2020",
        x = "Year", y = "Unemployment Rate",
        caption = "Data: source from Eurostat.") 
 ```
-```{r}
+```{r freduneuro}
 freduneuro <- as_tibble(get_alfred_series("LRHUTTTTEZQ156S",
-                                        observation_start = as.Date("2015-01-01"), realtime_start = "2020-08-11",realtime_end = "2020-08-11" ))
+                                        observation_start = as.Date("2015-01-01"), realtime_start = "2020-08-11",realtime_end = "2020-08-11" )) 
 
 ```
 
+```{r joineu}
+joineu <- left_join(freduneuro,fredun, by ="date") %>%
+  rename("European" ="LRHUTTTTEZQ156S", "Belgium"="LMUNRRTTBEQ156S") %>%
+  dplyr::select(date, Belgium, European)%>%
+  mutate_if(is.numeric, round, digits = 3)
+```
+
+```{r unemcom}
+unemcom <- ggplot(joineu, aes(x=date)) +
+  geom_line(aes(y = Belgium, colour = "Belgium")) + 
+  geom_line(aes(y = European, colour = "Euro"))+
+  labs(title = "Comparison Unemployment rate between Euro area and Belgium",
+       subtitle = "Unemployment rate appeared same trend during these year.",
+       x = "Year", y = "Unemployment Rate") 
+  
+unemcom
+```
 
 
 There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together. 
