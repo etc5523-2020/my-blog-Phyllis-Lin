@@ -33,7 +33,7 @@ library(formattable)
 library(babynames)
 ```
 
-The blog is a further research about COVID-19 in Belgium. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog.  Figure  \@ref(fig:merged) shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.
+The blog is a further research about COVID-19 in Belgium. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog. Figure \@ref(fig:merged) shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.  
 
 ```{r merged,out.width = "70%",fig.cap = "Reported deaths number in European Union."}
 merged <- download_merged_data(cached = TRUE, silent = TRUE)
@@ -43,12 +43,12 @@ plot_covid19_spread(
 )
 ```
 
-Thanks for lockdown policy in many countries that made the outbreak under control, in figure\@ref(fig:map) that the latest update in 14th Sep 2020, reported deaths number in European mostly were under 100 cases. In Belgium, it seems that outbreak is under control that keep the number under 10 cases.
+Thanks for lockdown policy in many countries that made the outbreak under control, in Figure \@ref(fig:map) that the latest update in 14th Sep 2020, reported deaths number in European mostly were under 100 cases. In Belgium, it seems that outbreak is under control that keep the number under 10 cases. For further research can have a look at [tidycovid19](https://github.com/joachim-gassen/tidycovid19)
 
 ```{r map,out.width = "85%",fig.cap = "Covid19:Reported deaths(new cases per day)"}
 map_covid19(merged, type = "deaths", region = "Europe")
 ```
-As it surveys an economy ravaged by the disease, figure \@ref(fig:bgraph) listed that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.  
+As it surveys an economy ravaged by the disease, Figure \@ref(fig:bgraph) which dataset was downloaded from [Real Gross Domestic Product for Belgium](https://alfred.stlouisfed.org/series?seid=CLVMNACSCAB1GQBElisted) shows that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.  
 
 ```{r fredbgdp}
 fred2020Q1vin <- as_tibble(get_alfred_series("CLVMNACSCAB1GQBE",
@@ -73,7 +73,7 @@ labs(title = "GDP From January 1, 2010 to April 1, 2020",
        x = "Year", y = "RGDP in Millions of Chained 2010 Euros",
        caption = "Data: source from Eurostat") + geom_hline(yintercept=87500, linetype="dashed", color = "red") 
 ```
-For a better understanding what impact that virus bring to, figure \@ref(fig:gcompare) compared to total GDP of 19 countries in European area, Belgium’s GDP have a same moving trend as European countries. However, in the last two quarter that Belgium has wider variations than normal.
+For a better understanding what impact that virus bring to, I found 19 countries in European aera of their total GDP resources from [Gross Domestic Product for Euro area (19 countries)](https://alfred.stlouisfed.org/series?seid=CLVMEURNSAB1GQEA19). Figure \@ref(fig:gcompare) compared to total GDP of 19 countries in European area, Belgium’s GDP have a same moving trend as European countries. However, in the last two quarter that Belgium has wider variations than normal.
 
 ```{r Bgdp-growth}
  fred2020 <-  fred2020Q1vin %>%
@@ -129,7 +129,7 @@ labs(title = "Unemployment Rate From Jan 1 2015 to Apr 1 2020",
        x = "Year", y = "Unemployment Rate",
        caption = "Data: source from Eurostat.") 
 ```
-Comparing unemployment rate around European area, Belgium unemployment rate was higher than average from the past five year but all with a bright future that unemployment rate fell year by year even figure \@ref(fig:unemcom) shown the gap between Belgium and average European area was increasingly getting bigger. With an unexpected epidemic that every thing seems changed that both have a same turning point since 2020, the tide of unemployment was coming fast and furious and we don’t know how long will this cold wave last. 
+Comparing unemployment rate around European area, Belgium unemployment rate was higher than average from the past five year but all with a bright future that unemployment rate fell year by year even Figure \@ref(fig:unemcom) shown the gap between Belgium and average European area was increasingly getting bigger. With an unexpected epidemic that every thing seems changed that both have a same turning point since 2020, the tide of unemployment was coming fast and furious and we don’t know how long will this cold wave last. If you have interest for impact in economy, I would like to recommend you to visit [Alfred](https://alfred.stlouisfed.org/) which recorded variance of economy historial data.
 
 ```{r freduneuro}
 freduneuro <- as_tibble(get_alfred_series("LRHUTTTTEZQ156S",
@@ -154,6 +154,5 @@ unemcom <- ggplot(joineu, aes(x=date)) +
   
 unemcom
 ```
-
 
 There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together. 
