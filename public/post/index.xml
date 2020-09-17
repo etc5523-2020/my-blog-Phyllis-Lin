@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>The impact of Covid-19 on Belgium</title>
+      <title>The impact of Covid-19 in Belgium</title>
       <link>/post/blog-2/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
       <guid>/post/blog-2/</guid>
@@ -34,18 +34,24 @@ Figure 1: Reported deaths number in European Union.
 Figure 2: Covid19:Reported deaths(new cases per day)
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;As it surveys an economy ravaged by the disease, figure &lt;a href=&#34;#fig:graph&#34;&gt;3&lt;/a&gt; listed that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:graph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/graph-1.png&#34; alt=&#34;Real GDP in Belgium&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;As it surveys an economy ravaged by the disease, figure &lt;a href=&#34;#fig:bgraph&#34;&gt;3&lt;/a&gt; listed that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:bgraph&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/bgraph-1.png&#34; alt=&#34;Real GDP in Belgium&#34; width=&#34;672&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
 Figure 3: Real GDP in Belgium
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Meanwhile, Belgium limps back to work after the outbreak, citizens job prospects are truly bleak. It was a period that the workforce as prospective employers mull lay-offs of hiring freezes. For a middle class used to relentlessly strong economic growth, the stock will be great. Figure &lt;a href=&#34;#fig:unem&#34;&gt;4&lt;/a&gt; illustrated unemployment rate from first quarter of 2015 to first quarter of 2020, it seems that there was a tendency to decrease unemployment rate since 2015 before epidemic happened. The latest data showed that unemployment rate in Belgium has obvious rose in first quarter in 2020.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:gcompare&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/gcompare-1.png&#34; alt=&#34;GDP comparison between Belgium and European Union(19 countries)&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 4: GDP comparison between Belgium and European Union(19 countries)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Meanwhile, Belgium limps back to work after the outbreak, citizens job prospects are truly bleak. It was a period that the workforce as prospective employers mull lay-offs of hiring freezes. For a middle class used to relentlessly strong economic growth, the stock will be great. Figure &lt;a href=&#34;#fig:unem&#34;&gt;5&lt;/a&gt; illustrated unemployment rate from first quarter of 2015 to first quarter of 2020, it seems that there was a tendency to decrease unemployment rate since 2015 before epidemic happened. The latest data showed that unemployment rate in Belgium has obvious rose in first quarter in 2020.&lt;/p&gt;
 &lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:unem&#34;&gt;&lt;/span&gt;
 &lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/unem-1.png&#34; alt=&#34;Unemployment Rate in Belgium&#34; width=&#34;672&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;
-Figure 4: Unemployment Rate in Belgium
+Figure 5: Unemployment Rate in Belgium
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together.&lt;/p&gt;

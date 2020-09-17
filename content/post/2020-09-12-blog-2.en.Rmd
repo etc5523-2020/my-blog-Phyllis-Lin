@@ -1,5 +1,5 @@
 ---
-title: The impact of Covid-19 on Belgium
+title: The impact of Covid-19 in Belgium
 author: Peimin Lin
 date: '2020-09-12'
 slug: blog-2
@@ -29,6 +29,8 @@ library(bookdown)
 library(alfred)
 library(lubridate)
 library(stevemisc)
+library(formattable)
+library(babynames)
 ```
 
 The blog is a further research about COVID-19 in Belgium. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog.  Figure  \@ref(fig:merged) shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.
@@ -46,14 +48,14 @@ Thanks for lockdown policy in many countries that made the outbreak under contro
 ```{r map,fig.cap = "Covid19:Reported deaths(new cases per day)"}
 map_covid19(merged, type = "deaths", region = "Europe")
 ```
-As it surveys an economy ravaged by the disease, figure \@ref(fig:graph) listed that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.  
+As it surveys an economy ravaged by the disease, figure \@ref(fig:bgraph) listed that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.  
 
-```{r fred}
+```{r fredbgdp}
 fred2020Q1vin <- as_tibble(get_alfred_series("CLVMNACSCAB1GQBE",
-                                        observation_start = as.Date("2005-01-01"),realtime_start = "2020-08-11" ))
+                                        observation_start = as.Date("2005-01-01"),realtime_start = "2020-09-08" ))
 ```
 
-```{r graph, fig.cap = "Real GDP in Belgium"}
+```{r bgraph, fig.cap = "Real GDP in Belgium"}
 fred2020Q1vin %>%
   ggplot(.,aes(date,CLVMNACSCAB1GQBE)) +
   theme_steve_web() +
@@ -71,6 +73,34 @@ labs(title = "GDP From January 1, 2010 to April 1, 2020",
        x = "Year", y = "RGDP in Millions of Chained 2010 Euros",
        caption = "Data: source from Eurostat") + geom_hline(yintercept=87500, linetype="dashed", color = "red") 
 ```
+```{r Bgdp-growth}
+ fred2020 <-  fred2020Q1vin %>%
+  mutate(Diff_growth = CLVMNACSCAB1GQBE - lag(CLVMNACSCAB1GQBE), # Difference in route between years
+    BelRate_percent = (Diff_growth /lag(CLVMNACSCAB1GQBE) * 100)) %>%
+  mutate_if(is.numeric, round, digits = 3)
+```
+
+```{r urogdp-growth}
+fredeuro <- as_tibble(get_alfred_series("CLVMEURNSAB1GQEA19",
+                                        observation_start = as.Date("2005-01-01"),realtime_start = "2020-09-08" )) %>%
+  mutate(EDiff_growth = CLVMEURNSAB1GQEA19-lag(CLVMEURNSAB1GQEA19), # Difference in route between years
+   ERate_percent = (EDiff_growth /lag(CLVMEURNSAB1GQEA19) * 100)) %>%
+  mutate_if(is.numeric, round, digits = 3)
+```
+
+```{r gdpjoin}
+join <- left_join(fred2020, fredeuro, by=c("date"="date")) %>%
+  dplyr::select(date, BelRate_percent, ERate_percent ) %>%
+  rename("Belgium"="BelRate_percent", "Euro"="ERate_percent")
+```
+
+```{r gcompare,fig.cap = "GDP comparison between Belgium and European Union(19 countries)"}
+gdpcom <- ggplot(join, aes(x=date)) +
+  geom_line(aes(y = Belgium, colour = "Belgium")) + 
+  geom_line(aes(y = Euro, colour = "Euro"))
+gdpcom 
+```
+
 Meanwhile, Belgium limps back to work after the outbreak, citizens job prospects are truly bleak. It was a period that the workforce as prospective employers mull lay-offs of hiring freezes. For a middle class used to relentlessly strong economic growth, the stock will be great. Figure \@ref(fig:unem) illustrated unemployment rate from first quarter of 2015 to first quarter of 2020, it seems that there was a tendency to decrease unemployment rate since 2015 before epidemic happened. The latest data showed that unemployment rate in Belgium has obvious rose in first quarter in 2020.
 
 ```{r fredun}
@@ -93,4 +123,12 @@ labs(title = "Unemployment Rate From Jan 1 2015 to Apr 1 2020",
        x = "Year", y = "Unemployment Rate",
        caption = "Data: source from Eurostat.") 
 ```
+```{r}
+freduneuro <- as_tibble(get_alfred_series("LRHUTTTTEZQ156S",
+                                        observation_start = as.Date("2015-01-01"), realtime_start = "2020-08-11",realtime_end = "2020-08-11" ))
+
+```
+
+
+
 There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together. 
