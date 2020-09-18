@@ -127,6 +127,17 @@ Figure 6: Comparison of Unemployment Rate between Belgium and Euro area
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together.&lt;/p&gt;
+&lt;div id=&#34;reference&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;Kun Ren and Kenton Russell (2019). &lt;strong&gt;formattable&lt;/strong&gt;: Create ‘Formattable’ Data Structures.https://renkun.me/formattable,&lt;/p&gt;
+&lt;p&gt;Allaire, J, Y Xie, J McPherson, J Luraschi, K Ushey, A Atkins, H Wickham, J Cheng, W Chang, and R Iannone (2020). &lt;strong&gt;rmarkdown: Dynamic Documents for R.&lt;/strong&gt; R package version 2.1. &lt;a href=&#34;https://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;https://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Grolemund, G and H Wickham (2011). Dates and Times Made Easy with lubridate. &lt;strong&gt;Journal of Statistical Software 40(3), 1–25.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Wickham, H, M Averick, J Bryan, W Chang, LD McGowan, R François, G Grolemund, A Hayes, L Henry, J Hester, M Kuhn, TL Pedersen, E Miller, SM Bache, K Müller, J Ooms, D Robinson, DP Seidel, V Spinu, K Takahashi, D Vaughan, C Wilke, K Woo, and H Yutani (2019). Welcome to the tidyverse. &lt;strong&gt;Journal of Open Source Software 4(43), 1686.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Joachim Gassen (2020). &lt;strong&gt;tidycovid19&lt;/strong&gt;: Download, Tidy and Visualize Covid-19 Related Data. R package version 0.0.0.9000.&lt;/p&gt;
+&lt;p&gt;Steve Miller (2020). &lt;strong&gt;stevemisc&lt;/strong&gt;: Miscellaneous Functions/Data That Only Steve Finds Useful. R package version 0.1.17.&lt;/p&gt;
+&lt;p&gt;Xie, Y (2020a). &lt;strong&gt;bookdown&lt;/strong&gt;: Authoring Books and Technical Documents with R Markdown. R package version 0.18. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Onno Kleen (2020). &lt;strong&gt;alfred&lt;/strong&gt;: Downloading Time Series from ALFRED Database for Various Vintages. R package version 0.1.8. &lt;a href=&#34;https://CRAN.R-project.org/package=alfred&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alfred&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     

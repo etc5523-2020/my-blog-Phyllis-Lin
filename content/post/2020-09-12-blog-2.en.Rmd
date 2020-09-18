@@ -28,9 +28,8 @@ library(tidycovid19)
 library(bookdown)
 library(alfred)
 library(lubridate)
-library(stevemisc)
 library(formattable)
-library(babynames)
+library(stevemisc)
 ```
 
 The blog is a further research about COVID-19 in Belgium. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog. Figure \@ref(fig:merged) shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.  
@@ -156,3 +155,20 @@ unemcom
 ```
 
 There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together. 
+
+# Reference
+Kun Ren and Kenton Russell (2019). **formattable**: Create 'Formattable' Data Structures.https://renkun.me/formattable,
+
+Allaire, J, Y Xie, J McPherson, J Luraschi, K Ushey, A Atkins, H Wickham, J Cheng, W Chang, and R Iannone (2020). **rmarkdown: Dynamic Documents for R.** R package version 2.1. https://rmarkdown.rstudio.com.
+
+Grolemund, G and H Wickham (2011). Dates and Times Made Easy with lubridate. **Journal of Statistical Software 40(3), 1–25.**
+
+Wickham, H, M Averick, J Bryan, W Chang, LD McGowan, R François, G Grolemund, A Hayes, L Henry, J Hester, M Kuhn, TL Pedersen, E Miller, SM Bache, K Müller, J Ooms, D Robinson, DP Seidel, V Spinu, K Takahashi, D Vaughan, C Wilke, K Woo, and H Yutani (2019). Welcome to the tidyverse. **Journal of Open Source Software 4(43), 1686.**
+
+Joachim Gassen (2020). **tidycovid19**: Download, Tidy and Visualize Covid-19 Related Data. R package version 0.0.0.9000.
+
+Steve Miller (2020). **stevemisc**: Miscellaneous Functions/Data That Only Steve Finds Useful. R package version 0.1.17.
+  
+Xie, Y (2020a). **bookdown**: Authoring Books and Technical Documents with R Markdown. R package version 0.18. https://github.com/rstudio/bookdown
+
+Onno Kleen (2020). **alfred**: Downloading Time Series from ALFRED Database for Various Vintages. R package version 0.1.8. https://CRAN.R-project.org/package=alfred
