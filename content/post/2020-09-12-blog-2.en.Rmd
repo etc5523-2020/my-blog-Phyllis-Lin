@@ -1,8 +1,8 @@
 ---
-title: The impact of Covid-19 in Belgium
-author: Peimin Lin
+title: "The impact of Covid-19 in Belgium"
+author: "Peimin Lin"
 date: '2020-09-12'
-slug: blog-2
+output: pdf_document
 categories: []
 tags: []
 subtitle: ''
@@ -15,6 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+slug: blog-2
 ---
 
 ```{r setup, include = FALSE}

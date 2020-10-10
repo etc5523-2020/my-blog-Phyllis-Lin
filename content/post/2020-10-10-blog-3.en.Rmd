@@ -1,0 +1,18 @@
+---
+title: blog-3
+author: 'Peimin Lin '
+date: '2020-10-10'
+slug: blog-3
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-10T14:29:01+11:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
