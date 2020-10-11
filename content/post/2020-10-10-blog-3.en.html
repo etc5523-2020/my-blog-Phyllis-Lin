@@ -1,0 +1,40 @@
+---
+title: Covid-19 Shinyapp Exploration
+author: 'Peimin Lin '
+date: '2020-10-10'
+slug: blog-3
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-10T14:29:01+11:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+
+
+<div id="shinyapp-overview" class="section level1">
+<h1>Shinyapp Overview</h1>
+<p>This project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world.
+The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases. For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases.</p>
+</div>
+<div id="plot-overview" class="section level1">
+<h1>Plot Overview</h1>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[-35.4735,-33.8688,-12.4634,-27.4698,-34.9285,-42.8821,-37.8136,-31.9505,50.8333,35.7518,22.1667,35.7452,37.5777,31.6927,41.2956,43.6661,44.0935,37.2692,39.3054,41.1129,35.1917,31.202,19.1959,24.974,22.3,26.8154,40.1824,26.0789,39.549,23.8298,29.1832,30.0572,30.6171,36.3427,47.862,32.9711,23.3417,27.614,37.8957,27.6104,31.8257,30.9756,51.165691,41.87194,36.204824,40.463667,40,-35.4735,-33.8688,-12.4634,-27.4698,-34.9285,-42.8821,-37.8136,-31.9505,50.8333,40.1824,30.0572,26.0789,35.7518,23.3417,23.8298,26.8154,19.1959,39.549,37.8957,22.3,27.6104,44.0935,32.9711,43.6661,41.2956,22.1667,37.2692,35.7452,35.1917,36.3427,31.202,37.5777,30.6171,39.3054,31.6927,41.1129,24.974,29.1832,47.862,27.614,31.8257,30.9756,51.165691,41.87194,36.204824,40.463667,40,-35.4735,-33.8688,-12.4634,-27.4698,-34.9285,-42.8821,-37.8136,-31.9505,50.8333,19.1959,22.3,44.0935,22.1667,37.2692,35.7452,37.5777,31.6927,41.1129,35.7518,43.6661,41.2956,24.974,26.8154,36.3427,26.0789,31.202,39.3054,35.1917,23.8298,40.1824,37.8957,30.6171,32.9711,30.0572,31.8257,47.862,27.6104,23.3417,27.614,33.882,29.1832,30.9756,51.165691,41.87194,36.204824,40.463667,40],[149.0124,151.2093,130.8456,153.0251,138.6007,147.3272,144.9631,115.8605,4.469936,104.2861,113.55,95.9956,112.2922,88.0924,122.6085,126.1923,113.9448,106.1655,117.323,85.2401,108.8701,121.4491,109.7453,101.487,114.2,106.8748,116.4142,117.9874,116.1306,108.7881,120.0934,107.874,102.7103,118.1498,127.7615,119.455,113.4244,115.7221,114.9042,111.7088,117.2264,112.2707,10.451526,12.56738,138.252924,-3.74922,-100,149.0124,151.2093,130.8456,153.0251,138.6007,147.3272,144.9631,115.8605,4.469936,116.4142,107.874,117.9874,104.2861,113.4244,108.7881,106.8748,109.7453,116.1306,114.9042,114.2,111.7088,113.9448,119.455,126.1923,122.6085,113.55,106.1655,95.9956,108.8701,118.1498,121.4491,112.2922,102.7103,117.323,88.0924,85.2401,101.487,120.0934,127.7615,115.7221,117.2264,112.2707,10.451526,12.56738,138.252924,-3.74922,-100,149.0124,151.2093,130.8456,153.0251,138.6007,147.3272,144.9631,115.8605,4.469936,109.7453,114.2,113.9448,113.55,106.1655,95.9956,112.2922,88.0924,85.2401,104.2861,126.1923,122.6085,101.487,106.8748,118.1498,117.9874,121.4491,117.323,108.8701,108.7881,116.4142,114.9042,102.7103,119.455,107.874,117.2264,127.7615,111.7088,113.4244,115.7221,113.614,120.0934,112.2707,10.451526,12.56738,138.252924,-3.74922,-100],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,1.38629436111989,2.77258872223978,2.77258872223978,2.77258872223978,2.77258872223978,3.2188758248682,3.58351893845611,3.89182029811063,4.15888308335967,4.39444915467244,4.60517018598809,4.79579054559674,4.79579054559674,4.969813299576,5.41610040220442,5.66642668811243,5.78074351579233,5.88887795833288,6.18208490671663,6.35610766069589,6.35610766069589,6.66440902035041,6.86797440897029,7.37775890822787,7.42714413340862,7.86365126544865,15.2965260618038,null,null,1.38629436111989,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,1.38629436111989,9.26945797645927,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,0,2.19722457733622,2.19722457733622,2.77258872223978,2.77258872223978,2.77258872223978,3.2188758248682,3.58351893845611,3.89182029811063,3.89182029811063,4.39444915467244,4.60517018598809,5.41610040220442,5.54517744447956,5.54517744447956,6.18208490671663,6.51619307604296,6.93147180559945,7.27517231945277,7.42714413340862,12.1135680264572,null,null,2.19722457733622,null,null],null,null,{"interactive":true,"className":"","stroke":false,"color":"#005900","weight":5,"opacity":0.5,"fill":true,"fillColor":"#005900","fillOpacity":0.5},null,null,null,null,["Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Belgium","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","Germany","Italy","Japan","Spain","US","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Belgium","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","Germany","Italy","Japan","Spain","US","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Belgium","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","Germany","Italy","Japan","Spain","US"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":15,"textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-42.8821,51.165691],"lng":[-100,153.0251]}},"evals":[],"jsHooks":[]}</script>
+</div>
