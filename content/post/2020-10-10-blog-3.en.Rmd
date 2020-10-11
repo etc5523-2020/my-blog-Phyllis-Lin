@@ -32,6 +32,11 @@ library(leaflet)
 data("coronavirus")
 ```
 
+# Shinyapp Overview
+This project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world.
+The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases.  For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases. 
+
+
 ```{r mapdata}
 map <- coronavirus %>% 
   filter(country%in%c("China",  
