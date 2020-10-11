@@ -16,3 +16,64 @@ image:
   preview_only: no
 projects: []
 ---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message = FALSE,
+  warning = FALSE, 
+  fig.align = "center")
+library(tidyverse)
+library(bookdown)
+library(coronavirus)
+library(leaflet)
+```
+
+```{r read package}
+data("coronavirus")
+```
+
+```{r mapdata}
+map <- coronavirus %>% 
+  filter(country%in%c("China",  
+                       "US",
+                       "Italy",
+                         "Spain",
+                        "Belgium",
+                        "Korean",
+                         "Japan",
+                       "England",
+                         "Australia",
+                         "Germany"))%>%  # select 10 main countries in coronavirus 
+group_by(type,date,country,cases, province,long,lat) %>%
+  summarise() 
+# write.csv(map,"map.csv") 
+# save the package data as csv file 
+```
+
+```{r tidy data}
+tidy <- coronavirus %>% 
+  group_by(type, date, country) %>%  # group coronavirus by type, date, country 
+  summarise(total_cases = sum(cases)) %>% # sum the cases after grouping
+  pivot_wider(names_from = type, values_from = total_cases) %>% # change the table type into wider
+  arrange(date) # arrange the date from early to latest
+ # write.csv(tidy,"tidy.csv")
+```
+
+
+
+```{r mapview}
+map1 <- map %>% filter(date== "2020-02-10") %>%
+   leaflet() %>%   # add map 
+      addTiles() %>%  
+      addCircleMarkers(     # add circle Markers in map according the cases number
+        lng          = ~long,
+        lat          = ~lat,
+        radius       = ~log(cases^2),
+        stroke       = FALSE,
+        color        =  "#005900",
+        fillOpacity  = 0.5,
+        label        = ~country,
+        labelOptions = labelOptions(textsize = 15)
+      )
+map1
+```
