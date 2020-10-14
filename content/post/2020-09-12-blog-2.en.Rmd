@@ -5,9 +5,9 @@ date: '2020-09-12'
 output: pdf_document
 categories: []
 tags: []
-subtitle: ''
+subtitle: 'A further research about COVID-19 in Belgium in economic aspect'
 summary: ''
-authors: []
+authors: [Peimin Lin]
 lastmod: '2020-09-14T16:06:03+10:00'
 featured: no
 image:

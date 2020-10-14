@@ -5,9 +5,9 @@ date: '2020-08-28'
 slug: blog-1
 categories: []
 tags: []
-subtitle: ''
+subtitle: 'coronavirus(COVID-19) in Belgium from March 2020 to August 2020'
 summary: ''
-authors: []
+authors: [Peimin Lin]
 lastmod: '2020-09-02T19:27:06+10:00'
 featured: no
 image:

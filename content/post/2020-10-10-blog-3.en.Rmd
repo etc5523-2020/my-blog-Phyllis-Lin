@@ -5,9 +5,9 @@ date: '2020-10-10'
 slug: blog-3
 categories: []
 tags: []
-subtitle: ''
+subtitle: 'Shinyapp about exploring COVID-19 cin 10 main countries around the world'
 summary: ''
-authors: []
+authors: [Peimin Lin]
 lastmod: '2020-10-10T14:29:01+11:00'
 featured: no
 image:
@@ -26,18 +26,32 @@ library(tidyverse)
 library(bookdown)
 library(coronavirus)
 library(leaflet)
+library(tinytex)
 ```
 
 ```{r read package}
 data("coronavirus")
 ```
 
+
 # Shinyapp Overview
-This project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world.
+ <span style="font-size:2em;">This</span> project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world.  The code is available on [Github]( https://github.com/Phyllis-Lin/covid19shiny.git)
+ 
+## Data
+The data that was used for all visualizations are provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) who pulled their data on a public [Github page]( https://github.com/CSSEGISandData/COVID-19) and Rami Krispin and other 4 contributor provided a tidy format of the data that named [coronavirus]( https://github.com/RamiKrispin/coronavirus). As the dataset were too large that I only choose 10 main countries that have severe outbreak and select the data from 22nd Jan to 31st Jul 2020. The data set have 7 variables contained data, province in some countries, longitude, latitude and cases number of three different types. 
+
+ 
 The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases.  For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases. 
 
-# Cover
-The cover page is showing of a plot about 10 main countries around the world's daily growing trend from 22nd Jan 2020 to 31st Jul 2020.
-![First section of Shinyapp](/post/2020-10-10-blog-3.en_files/cover.png)
+## The Open Dashboard 
+The overview section of the dashboard is a plot visualizing comparison of interesting countries through date range and types of the COVID-19 pandemic progression. There are checkboxes for choosing interesting countries, date range selection for the y-axis can be switched to correspond date interval and select interesting types about confirmed, death and recovered cases.  At the bottom of the plot, I set the event data that when you click the plot that will show the exact number of the cases in the box
 
 
+</center>![First section of Shinyapp](/post/2020-10-10-blog-3.en_files/cover.png){
+width=85% }
+</center>
+
+
+# Map
+The map is made be leaflet package
+![map](/post/2020-10-10-blog-3.en_files/map.png)
