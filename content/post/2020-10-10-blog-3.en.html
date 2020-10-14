@@ -25,10 +25,17 @@ projects: []
 <h2><strong>Data</strong></h2>
 <p>The data that was used for all visualizations are provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) who pulled their data on a public <a href="https://github.com/CSSEGISandData/COVID-19">Github page</a> and Rami Krispin and other 4 contributor provided a tidy format of the data that named <a href="https://github.com/RamiKrispin/coronavirus">coronavirus</a>. As the dataset were too large that I only choose 10 main countries that have severe outbreak and select the data from 22nd Jan to 31st Jul 2020. The data set have 7 variables contained data, province in some countries, longitude, latitude and cases number of three different types.</p>
 </div>
-<div id="the-open-dashboard" class="section level1">
-<h1>The Open Dashboard</h1>
-<p>The overview section of the dashboard is a plot visualizing comparison of interesting countries through date range and types of the COVID-19 pandemic progression. There are checkboxes for choosing interesting countries, date range selection for the y-axis can be switched to correspond date interval and select interesting types about confirmed, death and recovered cases. At the bottom of the plot, I set the event data that when you click the plot that will show the exact number of the cases in the box
-<img src="/post/2020-10-10-blog-3.en_files/cover.png" alt="First section of Shinyapp" /></p>
+<div id="the-open-dashboard" class="section level2">
+<h2><strong>The Open Dashboard</strong></h2>
+<p>The overview section of the dashboard is a plot visualizing comparison of interesting countries through date range and types of the COVID-19 pandemic progression. There are checkboxes for choosing interesting countries, date range selection for the y-axis can be switched to correspond date interval and select interesting types about confirmed, death and recovered cases. At the bottom of the plot, I set the event data that when you click the plot that will show the exact number of the cases in the box.<img src="/post/2020-10-10-blog-3.en_files/coverf.png" alt="cover" /></p>
 <p>From this dashboard, I used <a href="https://rstudio.github.io/leaflet/">leaflet</a> to create another dashboard shows better visualizations of the COVID-19 pandemics through worldwide map. Different from the open section, this map only show one day that you would be interested in through a date selection and select the cases type of the cases. At there are some countries increased sharply in some specific day that I set the shadow radius as the logarithm squared of cases number.<img src="/post/2020-10-10-blog-3.en_files/map.png" alt="map" /></p>
 <p>The table section contains the DT table that list all countries and three of cases, you can select your interested countries to view all the number of three types or one particularly type through select function at the bottom. Meanwhile, DT table also allows you to search key word through the search engine and arrange the number order. <img src="/post/2020-10-10-blog-3.en_files/table.png" alt="DTtable" /></p>
+<p>The dashboard is rounded off with the “About” section which describes the motivation, data sources and the tool I use for my first shinyapp.<img src="/post/2020-10-10-blog-3.en_files/about.png" alt="About" /></p>
+</div>
+<div id="considerations" class="section level2">
+<h2><strong>Considerations</strong></h2>
+</div>
+<div id="contribute" class="section level2">
+<h2><strong>Contribute</strong></h2>
+<p>After choosing the data, there are three section came up my mind that I should create a map which was the best way to overview the pandemic situation between different countries, a plot can show the trend and the table show the clear number of the cases. When I done the basic shinyapp, I began to add some fancy layer in for my shinyapp that create a dashboard and boxes. Found the relative icon of the section in <a href="https://fontawesome.com/icons?from=io">Font Awesome</a> to put in my manu panel. Setting my favourite colour as the background colour through HTML function in ui.</p>
 </div>
