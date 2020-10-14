@@ -41,7 +41,7 @@ mort <- read_csv("COVID19BE_MORT.csv")
 data("coronavirus")
 ```
 
-The blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to August 2020 and used the data source from [Kaggle]( https://www.kaggle.com/evgeniako/covid19-in-belgium) and used  the dataset from package *coronavirus*. 
+<span style="font-size:2em;">The</span> blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to August 2020 and used the data source from [Kaggle]( https://www.kaggle.com/evgeniako/covid19-in-belgium) and used  the dataset from package *coronavirus*. 
 
 You can visualise the number of COVID-19 cased confirmed in Belgium from March to August 2020 in Figure \@ref(fig:active). It shows that April was the most seriousness month that have the largest infected population. Since then, people started pay attention and took anti-epidemic action and the confirmed cases got a good result. However, there are still have high number of confirmed cases. 
 

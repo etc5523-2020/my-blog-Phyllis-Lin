@@ -33,7 +33,9 @@ library(formattable)
 library(stevemisc)
 ```
 
-The blog is a further research about COVID-19 in Belgium in economic aspect. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog. Figure \@ref(fig:merged) shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.  
+<span style="font-size:2em;">This</span> blog is a further research about COVID-19 in Belgium in economic aspect. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog. 
+
+Figure \@ref(fig:merged) shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.  
 
 ```{r merged,out.width = "80%",fig.cap = "Reported deaths number in European Union."}
 merged <- download_merged_data(cached = TRUE, silent = TRUE)
