@@ -100,6 +100,10 @@
 &lt;div id=&#34;considerations&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;strong&gt;Considerations&lt;/strong&gt;&lt;/h2&gt;
 &lt;/div&gt;
+&lt;div id=&#34;improvement&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Improvement&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;As I am not the expert of the Shinyapp that I cannot fully design the plot that I wanted, if I have a better understanding the event data that I would like to update the event box x-axis and y-axis variable names. Moreover, I did not adjust the right position of the select input in each section. Thus, for a better visualisation for each dashboard, I only set the select boxes in the non-conflict with the main section. I would like to have more discussion about my idea in the ‘About’ section.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;contribute&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;After choosing the data, there are three section came up my mind that I should create a map which was the best way to overview the pandemic situation between different countries, a plot can show the trend and the table show the clear number of the cases. When I done the basic shinyapp, I began to add some fancy layer in for my shinyapp that create a dashboard and boxes. Found the relative icon of the section in &lt;a href=&#34;https://fontawesome.com/icons?from=io&#34;&gt;Font Awesome&lt;/a&gt; to put in my manu panel. Setting my favourite colour as the background colour through HTML function in ui.&lt;/p&gt;
