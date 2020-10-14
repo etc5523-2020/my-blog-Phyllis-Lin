@@ -5,7 +5,7 @@ date: '2020-10-10'
 slug: blog-3
 categories: []
 tags: []
-subtitle: 'Shinyapp about exploring COVID-19 cin 10 main countries around the world'
+subtitle: 'Shinyapp about COVID-19 in 10 main countries'
 summary: ''
 authors: [Peimin Lin]
 lastmod: '2020-10-10T14:29:01+11:00'
@@ -20,24 +20,15 @@ projects: []
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="shinyapp-overview" class="section level1">
-<h1>Shinyapp Overview</h1>
-<p><span style="font-size:2em;">This</span> project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world. The code is available on <a href="https://github.com/Phyllis-Lin/covid19shiny.git">Github</a></p>
+<p><span style="font-size:2em;">This</span> project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world. The code is available on <a href="https://github.com/Phyllis-Lin/covid19shiny.git">Github</a>. The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases. For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases.</p>
 <div id="data" class="section level2">
-<h2>Data</h2>
+<h2><strong>Data</strong></h2>
 <p>The data that was used for all visualizations are provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) who pulled their data on a public <a href="https://github.com/CSSEGISandData/COVID-19">Github page</a> and Rami Krispin and other 4 contributor provided a tidy format of the data that named <a href="https://github.com/RamiKrispin/coronavirus">coronavirus</a>. As the dataset were too large that I only choose 10 main countries that have severe outbreak and select the data from 22nd Jan to 31st Jul 2020. The data set have 7 variables contained data, province in some countries, longitude, latitude and cases number of three different types.</p>
-<p>The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases. For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases.</p>
 </div>
-<div id="the-open-dashboard" class="section level2">
-<h2>The Open Dashboard</h2>
-<p>The overview section of the dashboard is a plot visualizing comparison of interesting countries through date range and types of the COVID-19 pandemic progression. There are checkboxes for choosing interesting countries, date range selection for the y-axis can be switched to correspond date interval and select interesting types about confirmed, death and recovered cases. At the bottom of the plot, I set the event data that when you click the plot that will show the exact number of the cases in the box</p>
-</center>
-<img src="/post/2020-10-10-blog-3.en_files/cover.png" title="fig:" style="width:85.0%" alt="First section of Shinyapp" />
-</center>
-</div>
-</div>
-<div id="map" class="section level1">
-<h1>Map</h1>
-<p>The map is made be leaflet package
+<div id="the-open-dashboard" class="section level1">
+<h1>The Open Dashboard</h1>
+<p>The overview section of the dashboard is a plot visualizing comparison of interesting countries through date range and types of the COVID-19 pandemic progression. There are checkboxes for choosing interesting countries, date range selection for the y-axis can be switched to correspond date interval and select interesting types about confirmed, death and recovered cases. At the bottom of the plot, I set the event data that when you click the plot that will show the exact number of the cases in the box
+<img src="/post/2020-10-10-blog-3.en_files/cover.png" alt="First section of Shinyapp" /></p>
+<p>From this dashboard, I used <a href="https://rstudio.github.io/leaflet/">leaflet</a> to create another dashboard shows better visualizations of the COVID-19 pandemics through worldwide map. Different from the open section, this map only show one day that you would be interested in through a date selection and select the cases type of the cases. At there are some countries increased sharply in some specific day that I set the shadow radius as the logarithm squared of cases number.
 <img src="/post/2020-10-10-blog-3.en_files/map.png" alt="map" /></p>
 </div>
