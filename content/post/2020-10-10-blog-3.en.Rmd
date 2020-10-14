@@ -36,49 +36,8 @@ data("coronavirus")
 This project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world.
 The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases.  For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases. 
 
-# Plot Overview
-```{r mapdata}
-map <- coronavirus %>% 
-  filter(country%in%c("China",  
-                       "US",
-                       "Italy",
-                         "Spain",
-                        "Belgium",
-                        "Korean",
-                         "Japan",
-                       "England",
-                         "Australia",
-                         "Germany"))%>%  # select 10 main countries in coronavirus 
-group_by(type,date,country,cases, province,long,lat) %>%
-  summarise() 
-# write.csv(map,"map.csv") 
-# save the package data as csv file 
-```
-
-```{r tidy data}
-tidy <- coronavirus %>% 
-  group_by(type, date, country) %>%  # group coronavirus by type, date, country 
-  summarise(total_cases = sum(cases)) %>% # sum the cases after grouping
-  pivot_wider(names_from = type, values_from = total_cases) %>% # change the table type into wider
-  arrange(date) # arrange the date from early to latest
- # write.csv(tidy,"tidy.csv")
-```
+# Cover
+The cover page is showing of a plot about 10 main countries around the world's daily growing trend from 22nd Jan 2020 to 31st Jul 2020.
+![First section of Shinyapp](/post/2020-10-10-blog-3.en_files/cover.png)
 
 
-
-```{r mapview}
-map1 <- map %>% filter(date== "2020-02-10") %>%
-   leaflet() %>%   # add map 
-      addTiles() %>%  
-      addCircleMarkers(     # add circle Markers in map according the cases number
-        lng          = ~long,
-        lat          = ~lat,
-        radius       = ~log(cases^2),
-        stroke       = FALSE,
-        color        =  "#005900",
-        fillOpacity  = 0.5,
-        label        = ~country,
-        labelOptions = labelOptions(textsize = 15)
-      )
-map1
-```

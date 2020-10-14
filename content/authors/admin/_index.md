@@ -1,5 +1,5 @@
 ---
-bio: My research interests include coronavirus (COVID-19) in Belgium use R programming.
+bio: My research interests include coronavirus (COVID-19) use R programming.
 education:
   courses:
   - course: Master of Business Anlytics
@@ -9,8 +9,10 @@ email: "plin0018@student.monash.edu"
 interests:
 - Statistics
 - Data visualization
+- Shinyapp
+
 organizations:
-- name: Moansh University
+- name: Monash University
 role: Student of Business Analytics
 social:
 - icon: github
@@ -28,4 +30,4 @@ user_groups:
 - Principal Investigators
 ---
 
-Hi! I am Peimin, welcome to my blog, nice to meet you! Hope you like my posts! Enjoy your trip~
+Hi! I am Peimin, welcome to my blog! I will continue to update, please keep following me!
