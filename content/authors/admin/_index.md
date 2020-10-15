@@ -21,9 +21,15 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/phyllis-lin-b7a0a7179
+- icon: facebook
+  icon_pack: fab
+  link: https://www.facebook.com/Phyllis.Lpm/
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/phyllis_lpm
+- icon: weibo
+  icon_pack: fab
+  link: https://weibo.com/2239780372/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1
 superuser: true
 title: Peimin Lin
 user_groups:

@@ -4,7 +4,7 @@
 widget: accomplishments
 
 # Activate this widget? true/false
-active: false
+active: true
 
 # This file represents a page section.
 headless: true
@@ -25,28 +25,22 @@ date_format: Jan 2006
 #   Leave other parameters empty if not required.
 #   You can begin a multiline `description` using YAML's `|-`.
 item:
-- certificate_url: https://www.coursera.org
+- certificate_url: 
   date_end: ""
-  date_start: "2018-10-01"
+  date_start: "2020-10-08"
   description: ""
   organization: Coursera
   organization_url: https://www.coursera.org
-  title: Neural Networks and Deep Learning
-  url: ""
-- certificate_url: https://www.edx.org
-  date_end: ""
-  date_start: "2018-03-01"
-  description: Formulated informed blockchain models, hypotheses, and use cases.
-  organization: edX
-  organization_url: https://www.edx.org
-  title: Blockchain Fundamentals
-  url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-- certificate_url: https://www.datacamp.com
-  date_end: "2017-12-21"
-  date_start: "2017-07-01"
+  title: Improving your statistical inferences
+  url: "https://www.coursera.org/learn/statistical-inferences"
+
+- certificate_url: "https://coursera.org/share/8592738b731e6336ab4eec2c6a308a1b"
+  date_end: "2020-09-26"
+  date_start: "2020-08-31"
   description: ""
-  organization: DataCamp
-  organization_url: https://www.datacamp.com
-  title: 'Object-Oriented Programming in R: S3 and R6 Course'
-  url: ""
+  organization: Coursera
+  organization_url: https://www.coursera.org
+  title: Business Metrics for Data-Driven Companies
+  url: "https://www.coursera.org/learn/analytics-business-metrics"
+
 ---
