@@ -5,7 +5,7 @@
     <link>/author/peimin-lin/</link>
       <atom:link href="/author/peimin-lin/index.xml" rel="self" type="application/rss+xml" />
     <description>Peimin Lin</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 10 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Peimin Lin</title>
@@ -13,424 +13,57 @@
     </image>
     
     <item>
-      <title>Covid-19 Shinyapp Exploration</title>
-      <link>/post/blog-3/</link>
-      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>/post/blog-3/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;span style=&#34;font-size:2em;&#34;&gt;This&lt;/span&gt; project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world. The code is available on &lt;a href=&#34;https://github.com/Phyllis-Lin/covid19shiny.git&#34;&gt;Github&lt;/a&gt;. The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases. For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases.&lt;/p&gt;
-&lt;div id=&#34;data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;Data&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The data that was used for all visualizations are provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) who pulled their data on a public &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34;&gt;Github page&lt;/a&gt; and Rami Krispin and other 4 contributor provided a tidy format of the data that named &lt;a href=&#34;https://github.com/RamiKrispin/coronavirus&#34;&gt;coronavirus&lt;/a&gt;. As the dataset were too large that I only choose 10 main countries that have severe outbreak and select the data from 22nd Jan to 31st Jul 2020. The data set have 7 variables contained data, province in some countries, longitude, latitude and cases number of three different types.&lt;/p&gt;
+      <title>An example preprint / working paper</title>
+      <link>/publication/preprint/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/preprint/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id=&#34;the-open-dashboard&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;The Open Dashboard&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The overview section of the dashboard is a plot visualizing comparison of interesting countries through date range and types of the COVID-19 pandemic progression. There are checkboxes for choosing interesting countries, date range selection for the y-axis can be switched to correspond date interval and select interesting types about confirmed, death and recovered cases. At the bottom of the plot, I set the event data that when you click the plot that will show the exact number of the cases in the box.&lt;img src=&#34;/post/2020-10-10-blog-3.en_files/coverf.png&#34; alt=&#34;cover&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;From this dashboard, I used &lt;a href=&#34;https://rstudio.github.io/leaflet/&#34;&gt;leaflet&lt;/a&gt; to create another dashboard shows better visualizations of the COVID-19 pandemics through worldwide map. Different from the open section, this map only show one day that you would be interested in through a date selection and select the cases type of the cases. At there are some countries increased sharply in some specific day that I set the shadow radius as the logarithm squared of cases number.&lt;img src=&#34;/post/2020-10-10-blog-3.en_files/map.png&#34; alt=&#34;map&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The table section contains the DT table that list all countries and three of cases, you can select your interested countries to view all the number of three types or one particularly type through select function at the bottom. Meanwhile, DT table also allows you to search key word through the search engine and arrange the number order. &lt;img src=&#34;/post/2020-10-10-blog-3.en_files/table.png&#34; alt=&#34;DTtable&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The dashboard is rounded off with the “About” section which describes the motivation, data sources and the tool I use for my first shinyapp.&lt;img src=&#34;/post/2020-10-10-blog-3.en_files/about.png&#34; alt=&#34;About&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;considerations&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;Considerations&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;For the data set I used was only a date range and I would like to have a keep updating data set that have better comparison in different ranges. There are various of uncertainty in the data set, some cases might not record, or some testing procedure did not compete that will have a different result for the cases number recorded. Because the shinyapp select input shortage, I only choose 10 main countries for comparison, I would like to add more countries and more variable in the plot. Also, I would like to try adding event data in map section.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;improvement&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;Improvement&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;As I am not the expert of the Shinyapp that I cannot fully design the plot that I wanted, if I have a better understanding the event data that I would like to update the event box x-axis and y-axis variable names. Moreover, I did not adjust the right position of the select input in each section. Thus, for a better visualisation for each dashboard, I only set the select boxes in the non-conflict with the main section. I would like to have more discussion about my idea in the ‘About’ section.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;contribute&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;After choosing the data, there are three section came up my mind that I should create a map which was the best way to overview the pandemic situation between different countries, a plot can show the trend and the table show the clear number of the cases. When I done the basic shinyapp, I began to add some fancy layer in for my shinyapp that create a dashboard and boxes. Found the relative icon of the section in &lt;a href=&#34;https://fontawesome.com/icons?from=io&#34;&gt;Font Awesome&lt;/a&gt; to put in my manu panel. Setting my favourite colour as the background colour through HTML function in ui.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;sources&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/h2&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;a href=&#34;https://rstudio.github.io/leaflet/&#34; class=&#34;uri&#34;&gt;https://rstudio.github.io/leaflet/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://fontawesome.com/icons?from=io&#34; class=&#34;uri&#34;&gt;https://fontawesome.com/icons?from=io&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div id=&#34;data-1&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;strong&gt;Data&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34;&gt;Johns Hopkins CSSE COVID-19 Cases&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/RamiKrispin/coronavirus&#34;&gt;R Packages coronavirus&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>The impact of Covid-19 in Belgium</title>
-      <link>/post/blog-2/</link>
-      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>/post/blog-2/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;span style=&#34;font-size:2em;&#34;&gt;This&lt;/span&gt; blog is a further research about COVID-19 in Belgium in economic aspect. According to Johns Hopkins University Center for System Science and Engineering invention provided latest version of the data, in the first 180 days Belgium reported death number took a small place in the European Union, however, Belgium took the highest death rate in the world which we found the result in the last blog.&lt;/p&gt;
-&lt;p&gt;Figure &lt;a href=&#34;#fig:merged&#34;&gt;1&lt;/a&gt; shows reported deaths number in 8 particular European countries in the first 180 days since the epidemic spread out. The graph shows the same trend were increased rapidly in the first 50 days.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:merged&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/merged-1.png&#34; alt=&#34;Reported deaths number in European Union.&#34; width=&#34;80%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: Reported deaths number in European Union.
-&lt;/p&gt;
+      <title>An example journal article</title>
+      <link>/publication/journal-article/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Thanks for lockdown policy in many countries that made the outbreak under control, in Figure &lt;a href=&#34;#fig:map&#34;&gt;2&lt;/a&gt; that the latest update in 16th Sep 2020, reported deaths number in European mostly were under 100 cases. In Belgium, it seems that outbreak is under control that keep the number under 10 cases. For further research can have a look at &lt;a href=&#34;https://github.com/joachim-gassen/tidycovid19&#34;&gt;tidycovid19&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:map&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/map-1.png&#34; alt=&#34;Covid19:Reported deaths(new cases per day)&#34; width=&#34;85%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Covid19:Reported deaths(new cases per day)
-&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id=&#34;impact-of-gross-domestic-product-in-belgium&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Impact of Gross Domestic Product in Belgium&lt;/h3&gt;
-&lt;p&gt;As it surveys an economy ravaged by the disease, Figure &lt;a href=&#34;#fig:bgraph&#34;&gt;3&lt;/a&gt; which dataset was downloaded from &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=CLVMNACSCAB1GQBElisted&#34;&gt;Real Gross Domestic Product for Belgium&lt;/a&gt; shows that Belgium real gross domestic product (GDP) from first quarter of 2005 to first quarter of 2020. There are two apparent fluctuations that one was from 2008 to 2009 which meet economic crisis, another one was from late 2019 to recent which under COVID-19 outbreak. The horizon line can clearly clarify that first quarter of 2020, GDP for Belgium fell to same level of 2019 which just went through an economic crisis.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:bgraph&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/bgraph-1.png&#34; alt=&#34;Real GDP in Belgium&#34; width=&#34;70%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 3: Real GDP in Belgium
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;comparison-gdp-between-euro-aera-and-belgium&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Comparison GDP between Euro Aera and Belgium&lt;/h3&gt;
-&lt;p&gt;For a better understanding what impact that virus bring to, I found 19 countries in European aera of their total GDP resources from &lt;a href=&#34;https://alfred.stlouisfed.org/series?seid=CLVMEURNSAB1GQEA19&#34;&gt;Gross Domestic Product for Euro area (19 countries)&lt;/a&gt;. Figure &lt;a href=&#34;#fig:gcompare&#34;&gt;4&lt;/a&gt; compared to total GDP of 19 countries in European area, Belgium’s GDP have a same moving trend as European countries. However, in the last two quarter that Belgium has wider variations than normal.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:gcompare&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/gcompare-1.png&#34; alt=&#34;GDP comparison between Belgium and European Union(19 countries)&#34; width=&#34;80%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 4: GDP comparison between Belgium and European Union(19 countries)
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;impact-of-unemployment-rate-in-belgium&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Impact of Unemployment Rate in Belgium&lt;/h3&gt;
-&lt;p&gt;Meanwhile, Belgium limps back to work after the outbreak, citizens job prospects are truly bleak. It was a period that the workforce as prospective employers mull lay-offs of hiring freezes. For a middle class used to relentlessly strong economic growth, the stock will be great. Figure &lt;a href=&#34;#fig:unem&#34;&gt;5&lt;/a&gt; illustrated unemployment rate from first quarter of 2015 to first quarter of 2020, it seems that there was a tendency to decrease unemployment rate since 2015 before epidemic happened. The latest data showed that unemployment rate in Belgium has obvious rose in first quarter in 2020.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:unem&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/unem-1.png&#34; alt=&#34;Unemployment Rate in Belgium&#34; width=&#34;70%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 5: Unemployment Rate in Belgium
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;comparison-unemployment-rate-between-euro-area-and-belgium&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Comparison Unemployment Rate between Euro Area and Belgium&lt;/h3&gt;
-&lt;p&gt;Comparing unemployment rate around European area, Belgium unemployment rate was higher than average from the past five year but all with a bright future that unemployment rate fell year by year even Figure &lt;a href=&#34;#fig:unemcom&#34;&gt;6&lt;/a&gt; shown the gap between Belgium and average European area was increasingly getting bigger. With an unexpected epidemic that every thing seems changed that both have a same turning point since 2020, the tide of unemployment was coming fast and furious and we don’t know how long will this cold wave last. If you have interest for impact in economy, I would like to recommend you to visit &lt;a href=&#34;https://alfred.stlouisfed.org/&#34;&gt;Alfred&lt;/a&gt; which recorded variance of economy historial data.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:unemcom&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-09-12-blog-2.en_files/figure-html/unemcom-1.png&#34; alt=&#34;Comparison of Unemployment Rate between Belgium and Euro area&#34; width=&#34;80%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 6: Comparison of Unemployment Rate between Belgium and Euro area
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;There is no doubt that virus has hit every country hard and it is a big question that we don’t know how bad will COVID-19 be for the economy around the world. There are so many bad news in 2020 and hopefully we can get COVID-19 vaccine soon and pull through together.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;reference&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;Kun Ren and Kenton Russell (2019). &lt;strong&gt;formattable&lt;/strong&gt;: Create ‘Formattable’ Data Structures.https://renkun.me/formattable,&lt;/p&gt;
-&lt;p&gt;Allaire, J, Y Xie, J McPherson, J Luraschi, K Ushey, A Atkins, H Wickham, J Cheng, W Chang, and R Iannone (2020). &lt;strong&gt;rmarkdown: Dynamic Documents for R.&lt;/strong&gt; R package version 2.1. &lt;a href=&#34;https://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;https://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Grolemund, G and H Wickham (2011). Dates and Times Made Easy with lubridate. &lt;strong&gt;Journal of Statistical Software 40(3), 1–25.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Wickham, H, M Averick, J Bryan, W Chang, LD McGowan, R François, G Grolemund, A Hayes, L Henry, J Hester, M Kuhn, TL Pedersen, E Miller, SM Bache, K Müller, J Ooms, D Robinson, DP Seidel, V Spinu, K Takahashi, D Vaughan, C Wilke, K Woo, and H Yutani (2019). Welcome to the tidyverse. &lt;strong&gt;Journal of Open Source Software 4(43), 1686.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Joachim Gassen (2020). &lt;strong&gt;tidycovid19&lt;/strong&gt;: Download, Tidy and Visualize Covid-19 Related Data. R package version 0.0.0.9000.&lt;/p&gt;
-&lt;p&gt;Steve Miller (2020). &lt;strong&gt;stevemisc&lt;/strong&gt;: Miscellaneous Functions/Data That Only Steve Finds Useful. R package version 0.1.17.&lt;/p&gt;
-&lt;p&gt;Xie, Y (2020a). &lt;strong&gt;bookdown&lt;/strong&gt;: Authoring Books and Technical Documents with R Markdown. R package version 0.18. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Onno Kleen (2020). &lt;strong&gt;alfred&lt;/strong&gt;: Downloading Time Series from ALFRED Database for Various Vintages. R package version 0.1.8. &lt;a href=&#34;https://CRAN.R-project.org/package=alfred&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=alfred&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Coronavirus in Belgium</title>
-      <link>/post/blog-1/</link>
-      <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/post/blog-1/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/vis/vis.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/vis/vis.min.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/timeline/timevis.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/timevis-binding/timevis.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
-&lt;link href=&#34;/rmarkdown-libs/bootstrap/css/bootstrap.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/bootstrap/js/bootstrap.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/bootstrap/shim/html5shiv.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/bootstrap/shim/respond.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/pymjs/pym.v1.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;/rmarkdown-libs/widgetframe-binding/widgetframe.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;span style=&#34;font-size:2em;&#34;&gt;The&lt;/span&gt; blog is a research about coronavirus(COVID-19) in Belgium from March 2020 to August 2020 and used the data source from &lt;a href=&#34;https://www.kaggle.com/evgeniako/covid19-in-belgium&#34;&gt;Kaggle&lt;/a&gt; and used the dataset from package &lt;em&gt;coronavirus&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;You can visualise the number of COVID-19 cased confirmed in Belgium from March to August 2020 in Figure &lt;a href=&#34;#fig:active&#34;&gt;1&lt;/a&gt;. It shows that April was the most seriousness month that have the largest infected population. Since then, people started pay attention and took anti-epidemic action and the confirmed cases got a good result. However, there are still have high number of confirmed cases.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:active&#34;&gt;&lt;/span&gt;
-&lt;div id=&#34;htmlwidget-1&#34; class=&#34;timevis html-widget&#34; style=&#34;width:672px;height:150px;&#34;&gt;
-&lt;div class=&#34;btn-group zoom-menu&#34;&gt;
-&lt;button type=&#34;button&#34; class=&#34;btn btn-default btn-lg zoom-in&#34; title=&#34;Zoom in&#34;&gt;+&lt;/button&gt;
-&lt;button type=&#34;button&#34; class=&#34;btn btn-default btn-lg zoom-out&#34; title=&#34;Zoom out&#34;&gt;-&lt;/button&gt;
+      <title>An example conference paper</title>
+      <link>/publication/conference-paper/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/conference-paper/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;items&#34;:[{&#34;content&#34;:&#34;3761&#34;,&#34;start&#34;:&#34;2020-03&#34;},{&#34;content&#34;:&#34;5343&#34;,&#34;start&#34;:&#34;2020-04&#34;},{&#34;content&#34;:&#34;3620&#34;,&#34;start&#34;:&#34;2020-05&#34;},{&#34;content&#34;:&#34;2086&#34;,&#34;start&#34;:&#34;2020-06&#34;},{&#34;content&#34;:&#34;2949&#34;,&#34;start&#34;:&#34;2020-07&#34;},{&#34;content&#34;:&#34;3694&#34;,&#34;start&#34;:&#34;2020-08&#34;}],&#34;groups&#34;:null,&#34;showZoom&#34;:false,&#34;zoomFactor&#34;:0.5,&#34;fit&#34;:true,&#34;options&#34;:[],&#34;height&#34;:&#34;150px&#34;,&#34;api&#34;:[]},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: Cases confrimed in Belgium since March 2020
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;For further research, it found that the elder got higher infected rate, the table show below listed confirmed cases in difference provinces and regions and difference age group. It shows that the largest number were from 80-89 age group in every region in April.&lt;/p&gt;
-&lt;table class=&#34;table table-condensed&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:right;&#34;&gt;
-Variables
-&lt;/th&gt;
-&lt;th style=&#34;text-align:right;&#34;&gt;
-MONTH
-&lt;/th&gt;
-&lt;th style=&#34;text-align:right;&#34;&gt;
-REGION
-&lt;/th&gt;
-&lt;th style=&#34;text-align:right;&#34;&gt;
-PROVINCE
-&lt;/th&gt;
-&lt;th style=&#34;text-align:right;&#34;&gt;
-AGEGROUP
-&lt;/th&gt;
-&lt;th style=&#34;text-align:right;&#34;&gt;
-NUMBER
-&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-1
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Flanders
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-WestVlaanderen
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-80-89
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(250, 97, 75, 0.4)&#34;&gt;63&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-2
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Brussels
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Brussels
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-80-89
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(218, 124, 96, 0.55)&#34;&gt;62&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-3
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Flanders
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Antwerpen
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-80-89
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(218, 124, 96, 0.55)&#34;&gt;62&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Flanders
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-WestVlaanderen
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-50-59
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(218, 124, 96, 0.55)&#34;&gt;62&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-5
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Flanders
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-OostVlaanderen
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-50-59
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(156, 178, 138, 0.85)&#34;&gt;60&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-6
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Flanders
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-OostVlaanderen
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-80-89
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(156, 178, 138, 0.85)&#34;&gt;60&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-7
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Wallonia
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Hainaut
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-70-79
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(156, 178, 138, 0.85)&#34;&gt;60&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-8
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Wallonia
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Hainaut
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-80-89
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(156, 178, 138, 0.85)&#34;&gt;60&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-9
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Brussels
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Brussels
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-70-79
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(125, 206, 160, 1)&#34;&gt;59&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-10
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-4
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Flanders
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-Antwerpen
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-50-59
-&lt;/td&gt;
-&lt;td style=&#34;text-align:right;&#34;&gt;
-&lt;span style=&#34;display: block; padding: 0 4px; border-radius: 4px; background-color: rgba(125, 206, 160, 1)&#34;&gt;59&lt;/span&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;We found that not only did the elder would easier infected, but also got a higher death rate. Figure &lt;a href=&#34;#fig:facet&#34;&gt;2&lt;/a&gt; shown below that number of mortality in three regions in Belgium, all the age group people in the lists and especially in the elder group. Brussels is the least number of mortality among the data set.&lt;/p&gt;
-&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:facet&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2020-08-28-blog-1.en_files/figure-html/facet-1.png&#34; alt=&#34;Mortaity numbers from March to August in three reigions&#34; width=&#34;100%&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 2: Mortaity numbers from March to August in three reigions
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Compare with United State and China which are the country got serious epidemic, we calculate the death rate and recovery rate. The interactive table shows below that Belgium got the second highest death rate in April. During this research, I found an article online said that Belgium got the highest death rate around the world. What made Belgium rank the first place? If you interested about it, you can spend few minutes to have a look &lt;a href=&#34;https://www.smh.com.au/world/europe/is-belgium-the-world-s-deadliest-covid-19-country-or-just-the-most-honest-20200522-p54voq.html&#34;&gt;Is Belgium the world’s deadliest COVID-19 country or just the most honest?&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Belgium is a beautiful country, it is famous for its chocolate and it has plenty of historical treasures. Hope the epidemic will end soon and I will have the opportunity to travel.&lt;/p&gt;
-&lt;div id=&#34;htmlwidget-2&#34; style=&#34;width:100%;height:480px;&#34; class=&#34;widgetframe html-widget&#34;&gt;&lt;/div&gt;
-&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;url&#34;:&#34;/post/2020-08-28-blog-1.en_files/figure-html//widgets/widget_dt.html&#34;,&#34;options&#34;:{&#34;xdomain&#34;:&#34;*&#34;,&#34;allowfullscreen&#34;:false,&#34;lazyload&#34;:false}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
-&lt;div id=&#34;reference&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;Allaire, J, Y Xie, J McPherson, J Luraschi, K Ushey, A Atkins, H Wickham, J Cheng, W Chang, and R Iannone (2020). &lt;strong&gt;rmarkdown: Dynamic Documents for R.&lt;/strong&gt; R package version 2.1. &lt;a href=&#34;https://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;https://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Grolemund, G and H Wickham (2011). Dates and Times Made Easy with lubridate. &lt;strong&gt;Journal of Statistical Software 40(3), 1–25.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Wickham, H, M Averick, J Bryan, W Chang, LD McGowan, R François, G Grolemund, A Hayes, L Henry, J Hester, M Kuhn, TL Pedersen, E Miller, SM Bache, K Müller, J Ooms, D Robinson, DP Seidel, V Spinu, K Takahashi, D Vaughan, C Wilke, K Woo, and H Yutani (2019). Welcome to the tidyverse. &lt;strong&gt;Journal of Open Source Software 4(43), 1686.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Xie, Y (2020a). &lt;strong&gt;bookdown&lt;/strong&gt;: Authoring Books and Technical Documents with R Markdown. R package version 0.18. &lt;a href=&#34;https://github.com/rstudio/bookdown&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/bookdown&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Kirill Müller and Hadley Wickham (2020). &lt;strong&gt;tibble&lt;/strong&gt;: Simple Data Frames. R package version 3.0.3. &lt;a href=&#34;https://CRAN.R-project.org/package=tibble&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=tibble&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Dean Attali and Almende B.V. (2019). &lt;strong&gt;timevis&lt;/strong&gt;:Create Interactive Timeline Visualizations in R. R package version 0.5. &lt;a href=&#34;https://CRAN.R-project.org/package=timevis&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=timevis&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;David Robinson, Alex Hayes and Simon Couch(2020). &lt;strong&gt;broom&lt;/strong&gt;: Convert Statistical Objects into Tidy Tibbles. R package version 0.7.0. &lt;a href=&#34;https://CRAN.R-project.org/package=broom&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=broom&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Achim Zeileis and Gabor Grothendieck (2005). &lt;strong&gt;zoo&lt;/strong&gt;: S3 Infrastructure for Regular and Irregular Time Series. &lt;strong&gt;Journal of Statistical Software&lt;/strong&gt;, 14(6), 1-27. &lt;a href=&#34;doi:10.18637/jss.v014.i06&#34; class=&#34;uri&#34;&gt;doi:10.18637/jss.v014.i06&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Rami Krispin and Jarrett Byrnes (2020). &lt;strong&gt;coronavirus&lt;/strong&gt;: The 2019 Novel Coronavirus COVID-19 (2019-nCoV) Dataset. R package version 0.3.0. &lt;a href=&#34;https://CRAN.R-project.org/package=coronavirus&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=coronavirus&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Bhaskar Karambelkar (2017). &lt;strong&gt;widgetframe&lt;/strong&gt;: ‘Htmlwidgets’ in Responsive ‘iframes’. R package version 0.3.1. &lt;a href=&#34;https://CRAN.R-project.org/package=widgetframe&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=widgetframe&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Kun Ren and Kenton Russell (2019). &lt;strong&gt;formattable&lt;/strong&gt;: Create ‘Formattable’ Data Structures.https://renkun.me/formattable,&lt;/p&gt;
-&lt;p&gt;Evgeniya K (2020). &lt;strong&gt;COVID-19 in Belgium.&lt;/strong&gt; &lt;a href=&#34;https://www.kaggle.com/evgeniako/covid19-in-belgium&#34; class=&#34;uri&#34;&gt;https://www.kaggle.com/evgeniako/covid19-in-belgium&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Yihui Xie, Joe Cheng and Xianying Tan (2020). &lt;strong&gt;DT&lt;/strong&gt;: A Wrapper of the JavaScript Library ‘DataTables’. R package version 0.15. &lt;a href=&#34;https://CRAN.R-project.org/package=DT&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=DT&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;Supplementary notes can be added here, including 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

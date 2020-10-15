@@ -5,6 +5,9 @@ education:
   - course: Master of Business Anlytics
     institution: Monash University
     year: 2021
+  - course: Bachelor of Accounting
+    institution: La Trobe University
+    year: 2019
 email: "plin0018@student.monash.edu"
 interests:
 - Statistics
