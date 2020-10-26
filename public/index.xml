@@ -77,6 +77,21 @@
     </item>
     
     <item>
+      <title>Review peer R package</title>
+      <link>/post/review-peer-r-package/</link>
+      <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/review-peer-r-package/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This post is going to review my peer Thanh R package assessment.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(icecovid19)
+ # launch_app()&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Covid-19 Shinyapp Exploration</title>
       <link>/post/blog-3/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
