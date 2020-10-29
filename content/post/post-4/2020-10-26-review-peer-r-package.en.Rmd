@@ -21,7 +21,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Overview
-This post is going to review my peer Nguyễn Đăng Thành R package [`icecovid19`](https://github.com/etc5523-2020/r-package-assessment-Thanh-8213). The package is aiming to launch the shinyapp made before and refactor some output as function. 
+This post is going to review my peer Nguyễn Đăng Thành R package [`icecovid19`](https://github.com/etc5523-2020/r-package-assessment-Thanh-8213). *Nguyễn Đăng Thành* and I are both in Master of Business Analytics program in [Monash University](https://www.monash.edu/study/courses/find-a-course/2021/business-analytics-b6022?gclid=Cj0KCQjw59n8BRD2ARIsAAmgPmI9XoHusR-Gnw6Jw9dlIbM20Q4YfWBuCV-0pnYsUK-XQNsFcxfjNe4aAs8-EALw_wcB) and this package was an assessment of unit [Communicating with Data](https://handbook.monash.edu/current/units/ETC5523). The package is aiming to launch the shinyapp made before and refactor some output as function. Great job! Thanh!
+<img src="https://media.giphy.com/media/l0HlDUUzqPf4V17HO/giphy.gif" alt="Italian Trulli" width="500" height="400">
 
 To download the package, you can 
 
@@ -55,8 +56,6 @@ Following the instruction of README.md, I downloaded `icecovid19` package succes
 
 
 ## Package Review
-
-- *Nguyễn Đăng Thành* and I are both in Master of Business Analytics program in [Monash University](https://www.monash.edu/study/courses/find-a-course/2021/business-analytics-b6022?gclid=Cj0KCQjw59n8BRD2ARIsAAmgPmI9XoHusR-Gnw6Jw9dlIbM20Q4YfWBuCV-0pnYsUK-XQNsFcxfjNe4aAs8-EALw_wcB) and this package was an assessment of unit [Communicating with Data](https://handbook.monash.edu/current/units/ETC5523).
 
 - [X] As the reviewer I confirm that there are no [conflicts of interest](https://devguide.ropensci.org/policies.html#coi) for me to review this work.
 
@@ -107,15 +106,17 @@ on leaflet map, the label will appear and give addition details.
 This function create a summary data table that shows the detailed number of confirmed, deceased and Estimated recovered cases. 
 
 - `sliderDateinput`
-The function constructs a slider widget to select a date value from a range of value.
+The function constructs a slider widget to select a date value from a range of value. Thanh test this ui refactor function and congratulate the test pass!
                                   
 - `summariseData`
-The function summarise data creates a new data frame. It will have one row for each combination 
-of grouping variables.
+The function summarise data creates a new data frame. It will have one row for each combination of grouping variables. 
 
 - `summariseData_newdaily`
 Summarise Data newdaily daily new cases
 
 ## Improvement suggestion
-The shiny dashboard that Thanh made is extraordinary that I really like the click event function inset the leaflet map. If I had to make suggestion I would suggest that adjust the plotly position in the plots section and look align would be better.  It is better to add more introduction in README.md and the `pkgdown` website was missing that it not good for overview the package.  To sum up, Thanh did a great job!
-<img src="https://media.giphy.com/media/l0HlDUUzqPf4V17HO/giphy.gif" alt="Italian Trulli" width="500" height="400">
+The shiny dashboard that Thanh made is extraordinary that I really like the click event function inset the leaflet map. If I had to make suggestion I would suggest that adjust the plotly position in the plots section and look align would be better.  It is better to add more introduction in README.md and regretted that Thanh set his `pkgdown` website as invisible that the website of the package was missing that it not good for overview the package. 
+
+## Things I learned
+Thanh passed two `R-CMD check` and `pkgdown check` that the records in github shows the effort Thanh made to debugging the error and passed the checks at the end which I did not achieve it in my assessment. Also, I have clearly steps to create a plotly event and insert in shinyapp. There are a lot of little details that I won't go into. Not only this review assessment I learned a lot, this whole unit also build a solid foundation for my further learning. Many thanks for teaching team!
+<img src="https://media.giphy.com/media/NRW2yP1aoYTsY/giphy.gif" alt="Italian Trulli" width="400" height="300">

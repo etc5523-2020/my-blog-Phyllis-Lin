@@ -86,9 +86,9 @@
     
     <item>
       <title>Review peer R package</title>
-      <link>/post/review-peer-r-package/</link>
+      <link>/post/post-4/review-peer-r-package/</link>
       <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>/post/review-peer-r-package/</guid>
+      <guid>/post/post-4/review-peer-r-package/</guid>
       <description>
 &lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
@@ -96,7 +96,8 @@
 
 &lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Overview&lt;/h2&gt;
-&lt;p&gt;This post is going to review my peer Nguyễn Đăng Thành R package &lt;a href=&#34;https://github.com/etc5523-2020/r-package-assessment-Thanh-8213&#34;&gt;&lt;code&gt;icecovid19&lt;/code&gt;&lt;/a&gt;. The package is aiming to launch the shinyapp made before and refactor some output as function.&lt;/p&gt;
+&lt;p&gt;This post is going to review my peer Nguyễn Đăng Thành R package &lt;a href=&#34;https://github.com/etc5523-2020/r-package-assessment-Thanh-8213&#34;&gt;&lt;code&gt;icecovid19&lt;/code&gt;&lt;/a&gt;. &lt;em&gt;Nguyễn Đăng Thành&lt;/em&gt; and I are both in Master of Business Analytics program in &lt;a href=&#34;https://www.monash.edu/study/courses/find-a-course/2021/business-analytics-b6022?gclid=Cj0KCQjw59n8BRD2ARIsAAmgPmI9XoHusR-Gnw6Jw9dlIbM20Q4YfWBuCV-0pnYsUK-XQNsFcxfjNe4aAs8-EALw_wcB&#34;&gt;Monash University&lt;/a&gt; and this package was an assessment of unit &lt;a href=&#34;https://handbook.monash.edu/current/units/ETC5523&#34;&gt;Communicating with Data&lt;/a&gt;. The package is aiming to launch the shinyapp made before and refactor some output as function. Great job! Thanh!
+&lt;img src=&#34;https://media.giphy.com/media/l0HlDUUzqPf4V17HO/giphy.gif&#34; alt=&#34;Italian Trulli&#34; width=&#34;500&#34; height=&#34;400&#34;&gt;&lt;/p&gt;
 &lt;p&gt;To download the package, you can&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# install.packages(&amp;quot;devtools&amp;quot;)
 devtools::install_github(&amp;quot;etc5523-2020/r-package-assessment-Thanh-8213&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -122,9 +123,8 @@ devtools::install_github(&amp;quot;etc5523-2020/r-package-assessment-Thanh-8213&
 &lt;div id=&#34;package-review&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Package Review&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;em&gt;Nguyễn Đăng Thành&lt;/em&gt; and I are both in Master of Business Analytics program in &lt;a href=&#34;https://www.monash.edu/study/courses/find-a-course/2021/business-analytics-b6022?gclid=Cj0KCQjw59n8BRD2ARIsAAmgPmI9XoHusR-Gnw6Jw9dlIbM20Q4YfWBuCV-0pnYsUK-XQNsFcxfjNe4aAs8-EALw_wcB&#34;&gt;Monash University&lt;/a&gt; and this package was an assessment of unit &lt;a href=&#34;https://handbook.monash.edu/current/units/ETC5523&#34;&gt;Communicating with Data&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;input type=&#34;checkbox&#34; disabled=&#34;&#34; checked=&#34;&#34; /&gt;
-As the reviewer I confirm that there are no &lt;a href=&#34;https://devguide.ropensci.org/policies.html#coi&#34;&gt;conflicts of interest&lt;/a&gt; for me to review this work.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled=&#34;&#34; checked=&#34;&#34; /&gt;
+As the reviewer I confirm that there are no &lt;a href=&#34;https://devguide.ropensci.org/policies.html#coi&#34;&gt;conflicts of interest&lt;/a&gt; for me to review this work.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id=&#34;documentation&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Documentation&lt;/h4&gt;
@@ -184,10 +184,9 @@ on leaflet map, the label will appear and give addition details.&lt;/p&gt;&lt;/l
 &lt;li&gt;&lt;p&gt;&lt;code&gt;getSummaryDT&lt;/code&gt;
 This function create a summary data table that shows the detailed number of confirmed, deceased and Estimated recovered cases.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;sliderDateinput&lt;/code&gt;
-The function constructs a slider widget to select a date value from a range of value.&lt;/p&gt;&lt;/li&gt;
+The function constructs a slider widget to select a date value from a range of value. Thanh test this ui refactor function and congratulate the test pass!&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;summariseData&lt;/code&gt;
-The function summarise data creates a new data frame. It will have one row for each combination
-of grouping variables.&lt;/p&gt;&lt;/li&gt;
+The function summarise data creates a new data frame. It will have one row for each combination of grouping variables.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;summariseData_newdaily&lt;/code&gt;
 Summarise Data newdaily daily new cases&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -195,8 +194,12 @@ Summarise Data newdaily daily new cases&lt;/p&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;div id=&#34;improvement-suggestion&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Improvement suggestion&lt;/h2&gt;
-&lt;p&gt;The shiny dashboard that Thanh made is extraordinary that I really like the click event function inset the leaflet map. If I had to make suggestion I would suggest that adjust the plotly position in the plots section and look align would be better. It is better to add more introduction in README.md and the &lt;code&gt;pkgdown&lt;/code&gt; website was missing that it not good for overview the package. To sum up, Thanh did a great job!
-&lt;img src=&#34;https://media.giphy.com/media/l0HlDUUzqPf4V17HO/giphy.gif&#34; alt=&#34;Italian Trulli&#34; width=&#34;500&#34; height=&#34;400&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The shiny dashboard that Thanh made is extraordinary that I really like the click event function inset the leaflet map. If I had to make suggestion I would suggest that adjust the plotly position in the plots section and look align would be better. It is better to add more introduction in README.md and regretted that Thanh set his &lt;code&gt;pkgdown&lt;/code&gt; website as invisible that the website of the package was missing that it not good for overview the package.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;things-i-learned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Things I learned&lt;/h2&gt;
+&lt;p&gt;Thanh passed two &lt;code&gt;R-CMD check&lt;/code&gt; and &lt;code&gt;pkgdown check&lt;/code&gt; that the records in github shows the effort Thanh made to debugging the error and passed the checks at the end which I did not achieve it in my assessment. Also, I have clearly steps to create a plotly event and insert in shinyapp. There are a lot of little details that I won’t go into. Not only this review assessment I learned a lot, this whole unit also build a solid foundation for my further learning. Many thanks for teaching team!
+&lt;img src=&#34;https://media.giphy.com/media/NRW2yP1aoYTsY/giphy.gif&#34; alt=&#34;Italian Trulli&#34; width=&#34;400&#34; height=&#34;300&#34;&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -211,11 +214,12 @@ Summarise Data newdaily daily new cases&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>Covid-19 Shinyapp Exploration</title>
-      <link>/post/blog-3/</link>
+      <link>/post/post-3/blog-3/</link>
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>/post/blog-3/</guid>
+      <guid>/post/post-3/blog-3/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;span style=&#34;font-size:2em;&#34;&gt;This&lt;/span&gt; project is intended to explore covid-19 cases of confirmed, death and recovered in 10 main countries around the world. The code is available on &lt;a href=&#34;https://github.com/Phyllis-Lin/covid19shiny.git&#34;&gt;Github&lt;/a&gt;. The project began as an attempt to compare difference type of cases in 10 countries through difference date range. The second one is use map to have a better visualisation in a particular day in difference type cases. The radius represented the number of the cases, the bigger, there were more cases. For the last one is the DT table that can have a better understanding of each countries difference type and exact day cases.&lt;/p&gt;
@@ -261,9 +265,9 @@ Summarise Data newdaily daily new cases&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>The impact of Covid-19 in Belgium</title>
-      <link>/post/blog-2/</link>
+      <link>/post/post-2/blog-2/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>/post/blog-2/</guid>
+      <guid>/post/post-2/blog-2/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -340,9 +344,9 @@ Figure 6: Comparison of Unemployment Rate between Belgium and Euro area
     
     <item>
       <title>Coronavirus in Belgium</title>
-      <link>/post/blog-1/</link>
+      <link>/post/post-1/blog-1/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/post/blog-1/</guid>
+      <guid>/post/post-1/blog-1/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
